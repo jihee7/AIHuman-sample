@@ -360,7 +360,7 @@ public void onAIPlayerError(AIError error)
 <p>After AIPlayer resource is loaded, call <strong>Send method</strong>. To activate the function, in the sample below, select the sentence to speak through the drop-down menu and click the <strong>Play</strong> button on the right.</p>
 <p>In general, speech can be performed using pure text, but speech can also be performed using <a href="#main-class-apis">AIHuman.Common.Model.AIClipSet</a>. Also, speech can be performed along with a specific gesture. For example, you could instruct the AI to say hello by waving his hand. This is called gesture speech. Details are explained in <a href="#main-class-apis">Gesture speech related parts</a>.</p>
 <p>If the text to speak is too long, it may not be possible to synthesize the resources required for the utterance. There are some models that can synthesize long sentences. Although it varies from ai to ai, it is generally recommended that sentences be cut to an appropriate length in Korean, usually within 30 to 40 characters, and at a similar level in English.</p>
-<p><img src="/img/Speak_Haylyn.png" style="zoom:100%;" /></p>
+<p><img src="../img/Speak_Haylyn.png" style="zoom:100%;" /></p>
 <pre><code class="language-c#">// using pure-text
 _aiPlayer.Send(new[] {&quot;this is sample sentence.&quot;});
 // using AIClipSet
@@ -442,7 +442,7 @@ _aiPlayer.Speed = value;
 </code></pre>
 <p><br/></p>
 <h3 id="gestures">Gestures</h3>
-<p>As briefly mentioned above, speech can also be performed using <a href="#main-class-apis">ClipSet</a>. The ClipSet here refers to one action unit in a series of AI actions. There are three types of ClipSet: general speech that performs only speaking, speech with gesture, and gesture only. The Gesture can be used depending on whether the AI model supports <a href="#main-class-apis">Gestures</a>, and the list of available gestures can be checked using the <a href="#main-class-apis">GetGestures</a> function of AIPlayer. Even a model that does not support gestures can be operated using ClipSet.</p>
+<p>As briefly mentioned above, speech can also be performed using <a href="#../MainClassAPIs/#aihumanmediaaiplayer">ClipSet</a>. The ClipSet here refers to one action unit in a series of AI actions. There are three types of ClipSet: general speech that performs only speaking, speech with gesture, and gesture only. The Gesture can be used depending on whether the AI model supports <a href="#../MainClassAPIs/#aihumancommonmodelaigesture">Gestures</a>, and the list of available gestures can be checked using the <a href="#main-class-apis">GetGestures</a> function of AIPlayer. Even a model that does not support gestures can be operated using ClipSet.</p>
 <p>Clipset types are as follows.</p>
 <ul>
 <li><a href="#main-class-apis">Clip Type</a></li>
@@ -451,7 +451,7 @@ _aiPlayer.Speed = value;
 <li>CLIP_SPEECH_GESTURE: Clip for speech with gestures</li>
 </ul>
 <p>In the sample screenshot below, an AI model named Jonathan is speaking while waving his hand with a "hi" gesture.</p>
-<p><img src="/img/Jonathan_Gesture_Demo.png" style="zoom:100%;" /></p>
+<p><img src="../img/Jonathan_Gesture_Demo.png" style="zoom:100%;" /></p>
 <pre><code class="language-c#">using AIHuman.Common.Model;
 using AIHuman.Core;
 using AIHuman.Media;
@@ -477,7 +477,7 @@ _aiPlayer.Send(new[] {clip});
 <p><br/></p>
 <h3 id="change-the-voice-or-language">Change the Voice or Language</h3>
 <p>Some AIs can speak with other voices besides basic voices. It is also possible to speak other language than the basic voice's language if the supported voice's language is different from the basic language of AI. You can check the sample for a list of voices that are currently available to a AI.</p>
-<p><img src="/img/CustomVoice_GCE.png" style="zoom:100%;" /></p>
+<p><img src="../img/CustomVoice_GCE.png" style="zoom:100%;" /></p>
 <h4 id="set-the-custom-voice-using-aiplayers-method">Set the custom voice using AIPlayer's method</h4>
 <p>You can check which voice AI can use by the following method. CustomVoice has properties of id, name, language, and tag.</p>
 <pre><code class="language-C#">ObservableCollection&lt;CustomVoice&gt; customVoices = _aiPlayer.GetCustomVoices();
@@ -499,7 +499,7 @@ _aiPlayer.Send(new[] {aiClipSet});
 <h3 id="preload">Preload</h3>
 <p>Preload is used when you want to make the AI speak the next sentence without delay by loading sentences in advance. You could think of it as a caching process. Select a sentence and press the <strong>Preload</strong> button in the sample below to perform the corresponding action.</p>
 <p><br/></p>
-<p><img src="/img/Haylyn_Preload.png" style="zoom:100%;" /></p>
+<p><img src="../img/Haylyn_Preload.png" style="zoom:100%;" /></p>
 <p><br/></p>
 <pre><code class="language-c#">// using pure-text
 _aiPlayer.Preload(new[] {&quot;sentence&quot;});
@@ -534,7 +534,7 @@ public void onAIStateChanged(AIState aiState)
 <h3 id="speak-multiple-sentences-consecutively">Speak Multiple Sentences Consecutively</h3>
 <p>You can give AIPlayer several sentences at once and make them speak sequentially. In the sample, multi-speaking is performed by selecting random sentences from sentences in the ComboBox. It can be one sentence or it can be several sentences. Press the <strong>Multi Speak</strong> button in the app below to perform the operation.</p>
 <p><br/></p>
-<p><img src="images/Haylyn_MultiSpeak.png" style="zoom:100%;" /></p>
+<p><img src="../img/Haylyn_MultiSpeak.png" style="zoom:100%;" /></p>
 <pre><code class="language-c#">// using pure-text
 _aiPlayer.Send(new[] {&quot;sentence1&quot;, &quot;sentence2&quot;});
 // using AIClipSet
@@ -553,14 +553,14 @@ _aiPlayer.Send(new[] {clip1, clip2});
 <p>After the resource is loaded, some settings of aiPlayer can be changed while the actual operation is on. In the sample project screen below, you can see that <strong>Scale, Margins</strong>, etc. can be adjusted.</p>
 <p><br/></p>
 <h4 id="change-ai-sizescale">Change AI Size(Scale)</h4>
-<p><img src="/img/YSB_Scale.png" style="zoom:100%;" />
+<p><img src="../img/YSB_Scale.png" style="zoom:100%;" />
 : You can set the size(scale) of AI. The possible value range is from 0.5 to 1.5.</p>
 <pre><code class="language-c#">// set Property
 _aiPlayer.Scale = value;
 </code></pre>
 <p><br/></p>
 <h4 id="change-ai-positionmargin">Change AI Position(Margin)</h4>
-<p><img src="/img/YSB_Margin.png" style="zoom:100%;" />
+<p><img src="../img/YSB_Margin.png" style="zoom:100%;" />
 : You can change the position(margins) of AI. It can be adjusted based on the X-axis(Horizontal) and the Y-axis(Vertical).</p>
 <pre><code class="language-c#">AIHuman.Common.Margin _aiMargin;
 _aiMargin.X = 64;
