@@ -61,8 +61,6 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#1-aiplayer-set-up">1. AIPlayer Set up</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#full-setup-process-4-steps">Full setup process (4 steps)</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#step-1-organize-your-layout">Step 1. Organize your layout</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#step-2-prepare-authentication-related-information">Step 2. Prepare authentication-related information</a>
@@ -74,23 +72,11 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-aiplayer-resources-and-states">2. AIPlayer Resources and States</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#start-loading-resources">Start loading resources</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#monitoring-player-state-through-iaiplayercallback-implementation">Monitoring player state through IAIPlayerCallback implementation</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#3-aiplayer-basic-speaking-features">3. AIPlayer Basic Speaking Features</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#basic-speaking-using-aiclipset-and-monitor-ai-speaking">Basic Speaking using AIClipSet and Monitor AI Speaking</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#speaking-related-monitoring">Speaking related Monitoring</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aiplayer-speaking-related-features">AIPlayer Speaking related Features</a>
-        <ul>
     <li class="toctree-l3"><a class="reference internal" href="#pause-speaking">Pause speaking</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#resume-speaking">Resume Speaking</a>
@@ -103,31 +89,19 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#change-ai-speech-rate">Change AI Speech Rate</a>
     </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gestures">Gestures</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#gestures">Gestures</a>
+    <li class="toctree-l3"><a class="reference internal" href="#change-the-voice-or-language">Change the Voice or Language</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#monitoring-callbacks-of-gesture-actions">Monitoring callbacks of gesture actions</a>
+    <li class="toctree-l4"><a class="reference internal" href="#set-the-custom-voice-using-aiplayers-method">Set the custom voice using AIPlayer's method</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#change-the-voice-or-language">Change the Voice or Language</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#set-the-custom-voice-using-aiplayers-method">Set the custom voice using AIPlayer's method</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#set-the-custom-voice-using-aiclipset">Set the custom voice using AIClipSet</a>
+    <li class="toctree-l4"><a class="reference internal" href="#set-the-custom-voice-using-aiclipset">Set the custom voice using AIClipSet</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#preload">Preload</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#preload-related-monitoring">Preload related Monitoring</a>
+    <li class="toctree-l3"><a class="reference internal" href="#preload">Preload</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#speak-multiple-sentences-consecutively">Speak Multiple Sentences Consecutively</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#multi-speak-related-monitoring">Multi Speak related Monitoring</a>
+    <li class="toctree-l3"><a class="reference internal" href="#speak-multiple-sentences-consecutively">Speak Multiple Sentences Consecutively</a>
     </li>
         </ul>
     </li>
@@ -182,8 +156,8 @@
 <li>For ViewModel related to SDK in Custom App, it is recommended to inherit and implement AIHuman.Common.Base.ViewModelBase, AIHuman.Interface.IAIPlayerCallback.</li>
 <li>It is recommended to call the Dispose() function of the object before destroying or terminating the AIPlayer. (AIPlayerViewModel is a Dispoable object.)</li>
 </ul>
-<h3 id="1-aiplayer-set-up">1. AIPlayer Set up</h3>
-<h4 id="full-setup-process-4-steps">Full setup process (4 steps)</h4>
+<h2 id="1-aiplayer-set-up">1. AIPlayer Set up</h2>
+<p><strong>Full setup process (4 steps)</strong></p>
 <ul>
 <li>Step 1: Add AIPlayer's parent layout to the page you want to use</li>
 <li>Step 2: Prepare AppID, authentication key, uuid, and platform that will be used in the AuthStart function</li>
@@ -200,7 +174,7 @@ public AIPlayerView AIPlayerObject  // View (UserControl) of AIPlayer to be used
     private set =&gt; OnPropertyChanged(nameof(AIPlayerObject));
 }
 </code></pre>
-<h4 id="step-1-organize-your-layout">Step 1. Organize your layout</h4>
+<h3 id="step-1-organize-your-layout">Step 1. Organize your layout</h3>
 <p>Configure the View to use AI Human in the XAML file. Create a ContentControl to place the AI and bind the AIPlayer. In the CS file, the property of the actual binding object is defined.</p>
 <pre><code class="language-c#">public AIPlayerView AIPlayerObject
 {
@@ -219,11 +193,11 @@ public AIPlayerView AIPlayerObject  // View (UserControl) of AIPlayer to be used
     &lt;/Grid&gt;
 ...
 </code></pre>
-<h4 id="step-2-prepare-authentication-related-information">Step 2. Prepare authentication-related information</h4>
+<h3 id="step-2-prepare-authentication-related-information">Step 2. Prepare authentication-related information</h3>
 <p>The AuthStart function requires 4 parameters. These four are AppID, UserKey, uuid, and Platform information.</p>
 <p>UserKey is a unique string generated by DeepBrain AI and should never be disclosed. If you call the API using this authentication key, you will receive available Default AI data and a token to be used in the future.</p>
 <p><strong>If token refresh is required because the token expired, it can be refreshed by calling AuthStart() again.</strong></p>
-<h4 id="step-3-implement-authstart-and-get-the-ai-list">Step 3. Implement AuthStart and Get the AI list</h4>
+<h3 id="step-3-implement-authstart-and-get-the-ai-list">Step 3. Implement AuthStart and Get the AI list</h3>
 <p>If you have all the necessary AuthStart function parameters mentioned in step 2, you are ready for authentication. Input these parameters inti AuthStart  AIHuam.AIAPI.Instance and implement a callback function. If authentication is successful, AI list will be returned. If you do not have permission to any of the AIs, aiList returns null.</p>
 <pre><code class="language-c#">AIHuman.Core.AIAPI.Instance.AuthStart(&quot;appId&quot;, &quot;userKey&quot;, &quot;UUID&quot;, &quot;wnds&quot;
         , (aiLIst, error) =&gt;
@@ -253,7 +227,7 @@ public AIPlayerView AIPlayerObject  // View (UserControl) of AIPlayer to be used
       }
   );
 </code></pre>
-<h4 id="step-4-initialize-aiplayer-to-the-desired-ai">Step 4. Initialize AIPlayer to the desired AI</h4>
+<h3 id="step-4-initialize-aiplayer-to-the-desired-ai">Step 4. Initialize AIPlayer to the desired AI</h3>
 <p>After authenticating and checking the list of available AIs, it is necessary to initialize the AI first in order to actually use a specific AI. To initialize it, create AIPlayer with the desired AIName as shown below. If there is an existing AIPlayer, delete it and create a new one.</p>
 <p>Once you initialize, AIPlayer downloads necessary resources based on initial settings and becomes active. You can also receive AI status through callback function registered in the second argument of the AIPlayer constructor.</p>
 <pre><code class="language-c#">...   
@@ -285,11 +259,11 @@ private void UpdateSelectedAI()
 }
 </code></pre>
 <p><br/></p>
-<h3 id="2-aiplayer-resources-and-states">2. AIPlayer Resources and States</h3>
-<h4 id="start-loading-resources">Start loading resources</h4>
+<h2 id="2-aiplayer-resources-and-states">2. AIPlayer Resources and States</h2>
+<p><strong>Start loading resources</strong></p>
 <p>When AIPlayer is created after authentication is completed, resource loading starts according to the input <strong>AIName</strong>, and the resource loading status is reported to the listener (IAIPlayerCallback) registered in the constructor. (Initially, it may take a few minutes for the resource to complete loading.)</p>
 <p><br/></p>
-<h4 id="monitoring-player-state-through-iaiplayercallback-implementation">Monitoring player state through IAIPlayerCallback implementation</h4>
+<p><strong>Monitoring player state through IAIPlayerCallback implementation</strong></p>
 <p>The values for the parameter AIState.state in the listener method onAIStateChanged(AIStatePublisher.AIState state) are shown below. You can also implement loading progress with onAIPlayerResLoadingProgressed(int current, int total).</p>
 <ul>
 <li>AIState.RES_LOAD_STARTED : resource loading is started.</li>
@@ -355,8 +329,8 @@ public void onAIPlayerError(AIError error)
 }
 </code></pre>
 <p><br/></p>
-<h3 id="3-aiplayer-basic-speaking-features">3. AIPlayer Basic Speaking Features</h3>
-<h4 id="basic-speaking-using-aiclipset-and-monitor-ai-speaking">Basic Speaking using AIClipSet and Monitor AI Speaking</h4>
+<h2 id="3-aiplayer-basic-speaking-features">3. AIPlayer Basic Speaking Features</h2>
+<h3 id="basic-speaking-using-aiclipset-and-monitor-ai-speaking">Basic Speaking using AIClipSet and Monitor AI Speaking</h3>
 <p>After AIPlayer resource is loaded, call <strong>Send method</strong>. To activate the function, in the sample below, select the sentence to speak through the drop-down menu and click the <strong>Play</strong> button on the right.</p>
 <p>In general, speech can be performed using pure text, but speech can also be performed using <a href="#main-class-apis">AIHuman.Common.Model.AIClipSet</a>. Also, speech can be performed along with a specific gesture. For example, you could instruct the AI to say hello by waving his hand. This is called gesture speech. Details are explained in <a href="#main-class-apis">Gesture speech related parts</a>.</p>
 <p>If the text to speak is too long, it may not be possible to synthesize the resources required for the utterance. There are some models that can synthesize long sentences. Although it varies from ai to ai, it is generally recommended that sentences be cut to an appropriate length in Korean, usually within 30 to 40 characters, and at a similar level in English.</p>
@@ -367,7 +341,7 @@ _aiPlayer.Send(new[] {&quot;this is sample sentence.&quot;});
 AIClipSet clip = AIAPI.CreateClipSet(&quot;this is sample sentence.&quot;);
 _aiPlayer.Send(new[] {clip});
 </code></pre>
-<h4 id="speaking-related-monitoring">Speaking related Monitoring</h4>
+<p><strong>Speaking related Monitoring</strong></p>
 <p>After the Send method is called, you can listen to the operation status feedback in the registered listener. This feedback is returned by calling the method (onAIStateChanged) of the listener(IAIPlayerCallback). onAIStateChanged sequentially returns the following AIState values. </p>
 <ul>
 <li>SPEAKING_PREPARE_STARTED </li>
@@ -414,28 +388,28 @@ public void onAIPlayerError(AIError error)
 }
 </code></pre>
 <p><br/></p>
-<h3 id="aiplayer-speaking-related-features">AIPlayer Speaking related Features</h3>
+<p><strong>AIPlayer Speaking related Features</strong></p>
 <p>The following are actions that can be performed while the AIPlayer is Speaking.</p>
-<h4 id="pause-speaking">Pause speaking</h4>
+<h3 id="pause-speaking">Pause speaking</h3>
 <p>: Pause speaking.</p>
 <pre><code class="language-c#">// pause method
 _aiPlayer.Pause()
 </code></pre>
-<h4 id="resume-speaking">Resume Speaking</h4>
+<h3 id="resume-speaking">Resume Speaking</h3>
 <p>: Resume speaking. (resume from pause)</p>
 <pre><code class="language-c#">// resume method
 _aiPlayer.Resume()
 </code></pre>
-<h4 id="stop-speaking">Stop speaking</h4>
+<h3 id="stop-speaking">Stop speaking</h3>
 <p>: Stop speaking and reset all data. (cannot resume)</p>
 <pre><code class="language-c#">// stop method
 _aiPlayer.StopSpeaking()
 </code></pre>
 <p><br/></p>
-<h3 id="4-aiplayer-advanced-speaking-features">4. AIPlayer Advanced Speaking Features</h3>
+<h2 id="4-aiplayer-advanced-speaking-features">4. AIPlayer Advanced Speaking Features</h2>
 <p>All functions other than speaking(mostly related to AI settings) of AIPlayer are described below.</p>
 <p>After the resource load required for AI operation is completed, some settings of AIPlayer can be adjusted. When the resource loading is completed (RES_LOAD_COMPLETED), the state changes such that actual operations can be performed(Idle). On right side of the panel, <strong>Voice, Gesture, Speed</strong>, etc. can be adjusted as shown below.</p>
-<h4 id="change-ai-speech-rate">Change AI Speech Rate</h4>
+<h3 id="change-ai-speech-rate">Change AI Speech Rate</h3>
 <p>: You can set the speech rate of AI. The possible value range is from 0.5 to 1.5.</p>
 <pre><code class="language-c#">// set Property
 _aiPlayer.Speed = value;
@@ -466,7 +440,7 @@ AIClipSet clip = AIAPI.CreateClipSet(&quot;nice to meet you.&quot;, gesture.Name
 
 _aiPlayer.Send(new[] {clip});
 </code></pre>
-<h4 id="monitoring-callbacks-of-gesture-actions">Monitoring callbacks of gesture actions</h4>
+<p><strong>Monitoring callbacks of gesture actions</strong></p>
 <p>IAIPlayerCallback.OnAIStateChanged(AIState) is called in the same way as the speech actions. The state value of AIState is called as follows to know the state. However, since AIState.GetAIMsg().Clip.Type, GestureName, and SpeechText are known here, it is possible to know whether it is a gesture action or just a speech action.</p>
 <ul>
 <li>SPEAKING_PREPARE_STARTED </li>
@@ -507,7 +481,7 @@ _aiPlayer.Preload(new[] {&quot;sentence&quot;});
 _aiPlayer.Preload(new[] {clip});
 </code></pre>
 <p><br/></p>
-<h4 id="preload-related-monitoring">Preload related Monitoring</h4>
+<p><strong>Preload related Monitoring</strong></p>
 <p>AIPlayerCallback.onAIStateChanged(AIState) is called during the preload operation just like the speaking operation. The value of AIState is shown below.</p>
 <ul>
 <li>SPEAKING_PREPARE_PRELOAD_STARTED</li>
@@ -541,7 +515,7 @@ _aiPlayer.Send(new[] {&quot;sentence1&quot;, &quot;sentence2&quot;});
 _aiPlayer.Send(new[] {clip1, clip2});
 </code></pre>
 <p><br/></p>
-<h4 id="multi-speak-related-monitoring">Multi Speak related Monitoring</h4>
+<p><strong>Multi Speak related Monitoring</strong></p>
 <p>IAIPlayerCallback.onAIStateChanged(AIState) is called for each sentence. The possible AIState values are shown below. </p>
 <ul>
 <li>SPEAKING_PREPARE_STARTED</li>
@@ -549,17 +523,17 @@ _aiPlayer.Send(new[] {clip1, clip2});
 </ul>
 <p>If you send several sentences, it automatically preloads if possible. In this case, you can see that the delay between utterances when the AI speaks is reduced.</p>
 <p><br/></p>
-<h3 id="5-functionalities-other-than-ai-speaking-mainly-related-to-ai-settings">5. Functionalities other than AI Speaking (mainly related to AI settings)</h3>
+<h2 id="5-functionalities-other-than-ai-speaking-mainly-related-to-ai-settings">5. Functionalities other than AI Speaking (mainly related to AI settings)</h2>
 <p>After the resource is loaded, some settings of aiPlayer can be changed while the actual operation is on. In the sample project screen below, you can see that <strong>Scale, Margins</strong>, etc. can be adjusted.</p>
 <p><br/></p>
-<h4 id="change-ai-sizescale">Change AI Size(Scale)</h4>
+<h3 id="change-ai-sizescale">Change AI Size(Scale)</h3>
 <p><img src="../img/YSB_Scale.png" style="zoom:100%;" />
 : You can set the size(scale) of AI. The possible value range is from 0.5 to 1.5.</p>
 <pre><code class="language-c#">// set Property
 _aiPlayer.Scale = value;
 </code></pre>
 <p><br/></p>
-<h4 id="change-ai-positionmargin">Change AI Position(Margin)</h4>
+<h3 id="change-ai-positionmargin">Change AI Position(Margin)</h3>
 <p><img src="../img/YSB_Margin.png" style="zoom:100%;" />
 : You can change the position(margins) of AI. It can be adjusted based on the X-axis(Horizontal) and the Y-axis(Vertical).</p>
 <pre><code class="language-c#">AIHuman.Common.Margin _aiMargin;
@@ -569,7 +543,7 @@ _aiMargin.Y = 8;
 _aiPlayer.Margin = _aiMargin;
 </code></pre>
 <p><br/></p>
-<h3 id="6-error-index">6. Error Index</h3>
+<h2 id="6-error-index">6. Error Index</h2>
 <p>You can receive the error code and its details as a callback(onAIPlayerError) and take appropriate action.</p>
 <p>When an error occurs, the onAIPlayerError(AIError) callback function is called. AIError, the argument of this function, contains information about the error. AIError.errorType tells what kind of error has occurred, and you can find out the details of the error as JSON String through the getMessage() function.</p>
 <p>By using this message, you can take action when a specific error occurs. For example, code 1402 may mean Token expired, and in this case, call AuthStart() to refresh the token.</p>
