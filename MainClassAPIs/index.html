@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Main Class APIs - AI Human SDK for Windows</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Main Class APIs";
+        var mkdocs_page_input_path = "MainClassAPIs.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI Human SDK for Windows
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Introduction/">Introduction</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ProjectSetup/">Project Set up</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AIHumanQuickStart/">AIHuman Quick Start</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SamplePorjectDescription/">Sample Porject Description</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AIPlayerDescription/">AIPlayer Description</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Main Class APIs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#aihumanmediaaiplayer">AIHuman.Media.AIPlayer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aihumaninterfaceiaiplayercallback">AIHuman.Interface.IAIPlayerCallback</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aihumancoreaiapi">AIHuman.Core.AIAPI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aihumancommonmodelaiclipset">AIHuman.Common.Model.AIClipSet</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aihumancommonmodelaigesture">AIHuman.Common.Model.AIGesture</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI Human SDK for Windows</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Main Class APIs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="main-class-apis">Main Class APIs</h1>
+<p>The APIs of the main classes of AI Human SDK are briefly described.</p>
+<p><br/></p>
+<h2 id="aihumanmediaaiplayer">AIHuman.Media.AIPlayer</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Modifier and Type</th>
+<th>Method / Property Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ctor</code></td>
+<td><code>AIPlayer(IAIPlayerCallback callback)</code> Create AIPlayer with Default AI and register callback for state monitoring. (valid only when authentication is complete)</td>
+</tr>
+<tr>
+<td align="left"><code>ctor</code></td>
+<td><code>AIPlayer(string aiName, IAIPlayerCallback callback)</code> Creates AIPlayer with an AI model defined in aiName and registers callback for state monitoring. (valid only when authentication is complete)</td>
+</tr>
+<tr>
+<td align="left"><code>AIHuman.Media.AIPlayerView</code></td>
+<td><code>GetObject()</code> It is the actual Control object to be linked(binding) with the View (Xaml) of the Cutom App.</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>Pause()</code> Pauses speaking.</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>Preload(string[] sentences)</code> Prepare the sentences to be spoken in advance.</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>Preload(AIClipSet[] clips)</code> Prepare the clips to be play in advance.</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>Dispose()</code> Called when destroying AIPlayer.</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>Resume()</code> Continue speaking again from when it was paused.</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>Send(string[] sentences)</code> Let the AI speak. (using pure-text string)</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>Send(AIClipSet[] clips)</code> Let the AI play. (using AIHuman.Common.Model.AIClipSet)</td>
+</tr>
+<tr>
+<td align="left"><code>void</code></td>
+<td><code>StopSpeaking()</code> Stop the current conversation. It also deletes the content in the speaking queue.</td>
+</tr>
+<tr>
+<td align="left"><code>float</code></td>
+<td><code>Speed { get; set; }</code>Get or Set the AI's speech rate.</td>
+</tr>
+<tr>
+<td align="left"><code>float</code></td>
+<td><code>Scale { get; set; }</code> Get or Set the AI's scale.</td>
+</tr>
+<tr>
+<td align="left"><code>AIHuman.Common.Margin</code></td>
+<td><code>Margin { get; set; }</code> Get or Set the AI's margin.</td>
+</tr>
+<tr>
+<td align="left"><code>System.Windows.Controls.MediaState</code></td>
+<td><code>PlayerState { get; }</code> Get the state of AIPlayer</td>
+</tr>
+<tr>
+<td align="left"><code>string</code></td>
+<td><code>AIName { get; }</code> Get the AI name.</td>
+</tr>
+<tr>
+<td align="left"><code>Collection&lt;AIGesture&gt;</code></td>
+<td><code>GetGestures()</code> Get a collection of gesture. (available gestures)</td>
+</tr>
+<tr>
+<td align="left"><code>Collection&lt;CustomVoice&gt;</code></td>
+<td><code>GetCustomVoices()</code> Get a collection of custom voice. (available custom voices)</td>
+</tr>
+<tr>
+<td align="left"><code>bool</code></td>
+<td><code>SetCustomVoice(CustomVoice cv)</code> Set AI's voice to cv. return true if success.</td>
+</tr>
+<tr>
+<td align="left"><code>CustomVoice</code></td>
+<td><code>FindCustomVoice(string id)</code> Find CustomVoice by id. return null if there is none.</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="aihumaninterfaceiaiplayercallback">AIHuman.Interface.IAIPlayerCallback</h2>
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void</code></td>
+<td><code>onAIPlayerError(AIError error)</code> Reporting an error occurred in AIPlayer</td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td><code>onAIPlayerResLoadingProgressed(int current, int total)</code>Reporting the resource loading progress of AIPlayer</td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td><code>onAIStateChanged(AIState state)</code>Reporting the changed state of AI</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="aihumancoreaiapi">AIHuman.Core.AIAPI</h2>
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void</code></td>
+<td><code>AuthStart(string appId, string userKey, string uuid, string platform, Action&lt;JToken, string&gt; onComplete)</code> Attempts to authenticate with the issued userKey. It passes the response to CallBack(onComplete) and if successful, you can get a usable AI model.</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>GenerateToken(string appId, string userKey, string uuid, string platform)</code> Attempts to authenticate to the server with this information and returns true if successful.</td>
+</tr>
+<tr>
+<td><code>Newtonsoft.Json.Linq.JObject</code></td>
+<td><code>GetAIList()</code> Get a list of available AI models.</td>
+</tr>
+<tr>
+<td><code>AIHuman.Common.AIModelData</code></td>
+<td><code>GetDefaultAIData()</code> Get the default AI information.</td>
+</tr>
+<tr>
+<td><code>string[]</code></td>
+<td><code>GetSampleTexts(string aiName)</code> Get AI sample sentences using aiName.</td>
+</tr>
+<tr>
+<td><code>string[]</code></td>
+<td><code>GetSampleTextList(string languageCode)</code> Get the list of sample texts for the language from server.</td>
+</tr>
+<tr>
+<td><code>AIHuman.Common.Model.AIClipSet</code></td>
+<td><code>CreateClipSet(string speechText, string gestureName = "", CustomVoice customVoice = null)</code> Create AIClipSet Object.</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="aihumancommonmodelaiclipset">AIHuman.Common.Model.AIClipSet</h2>
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enum</code></td>
+<td><code>ClipType</code> Clipset types are as follows.<br />- CLIP_SPEECH: Clip only for speech without gestures <br />- CLIP_GESTURE: Gesture only Clip<br />- CLIP_SPEECH_GESTURE: Clip for speech with gestures</td>
+</tr>
+<tr>
+<td><code>ClipType</code></td>
+<td><code>Type { get; }</code> Get the clip type set in the AIClipSet.</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>SpeechText { get; }</code> Get the sentence set in the AIClipSet.</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>GestureName { get; }</code> Get the gesture name set in the AIClipSet.</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>ClipId { get; }</code> Get the ID set in the AIClipSet.</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="aihumancommonmodelaigesture">AIHuman.Common.Model.AIGesture</h2>
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>Name { get; }</code> Get the name of the gesture.</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>EnableSpeech { get; }</code> Get whether the gesture is speech-enabled. Returns true if gesture with speech is possible.</td>
+</tr>
+<tr>
+<td><code>AIClipSet.ClipType</code></td>
+<td><code>GetClipType()</code> Get the recommended clip type when using the gesture.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../AIPlayerDescription/" class="btn btn-neutral float-left" title="AIPlayer Description"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../AIPlayerDescription/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
