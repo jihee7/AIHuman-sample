@@ -4,7 +4,7 @@
 
 In this chapter, we will quickly set up AIPlayer with the default AI and learn about AI speaking process. When setting up AIPlayer for the first time, it may take several minutes to load depending on the network condition.
 
-#### 1. The SDK authentication process is performed in the partial class App : System.Windows.Application.
+**1. The SDK authentication process is performed in the partial class App : System.Windows.Application.**
 
 **Create a project in [SDK Website](https://aitalk.deepbrainai.io), enter App Id of Windows and click confirm. Then User Key will be issued.**
 
@@ -17,13 +17,13 @@ Implement the AuthStart function: input appId, userKey, uuid, and platform infor
 	- uuid refers to the unique ID of the device where the application is installed. It is created by calling Guid.NewGuid(), and saved and reused after initial creation so that it does not change each time it is called.
 	- platform argument uses "wnds", which means windows.
 
-#### 2. Create AIPlayer through CreateQuickStartViewModel using INavigationService.
+**2. Create AIPlayer through CreateQuickStartViewModel using INavigationService.**
 
  	1. Create a QuickStartView and a QuickStartViewModel that will contain AIPlayer.
  	2. Create a Layout Component (parent layout) to which AIPlayer will be added at the location where you want to show AIPlayer of QuickStartView.
  	3. Binding AIPlayer Object of QuickStartViewModel to QuickStartView.
 
-#### 3. In QuickStartViewModel, it is possible to receive callback of AIState by IAIPlayerCallback.
+**3. In QuickStartViewModel, it is possible to receive callback of AIState by IAIPlayerCallback.**
 
 Implement the command for speaking and default AI operation.
 

@@ -1,13 +1,12 @@
 # Project Set up
 
-### 1. Create a New Project in Visual Studio(2019).
-
-#### 	: Create New Project > WPF Application > Target Framework > .NET 5.0
-#### 		WpfApp1 is the default when creating a project.
+**1. Create a New Project in Visual Studio(2019).**
+**Create New Project > WPF Application > Target Framework > .NET 5.0**
+**WpfApp1 is the default when creating a project.**
 
 <br/>
 
-### 2. Project Setup
+**2. Project Setup.**
 
 Perform the initial setup of the project.
 
@@ -31,7 +30,7 @@ Perform the initial setup of the project.
 
 <br/>
 
-### 3. Add Layout Component(parent layout) to which AIPlayer will be added to MainWindow.xaml.
+**3. Add Layout Component(parent layout) to which AIPlayer will be added to MainWindow.xaml.**
 
 <img src="../img/NewProject_Add_Layout.png" style="zoom:100%;" />
 
@@ -39,7 +38,7 @@ Perform the initial setup of the project.
 
 <br/>
 
-### 4. Write the code below in App.xaml.cs, MainWindowViewModel.cs, and MainWindow.
+**4. Write the code below in App.xaml.cs, MainWindowViewModel.cs, and MainWindow.**
 
 - App.xaml.cs
 
@@ -274,10 +273,9 @@ namespace WpfApp1
 }
 ```
 
-
-
-### 5. Command the AI to speak 
+**5. Command the AI to speak.**
 
 - Build Solution > Run > (Loading Resources) > Enter a sentence in the text box at the bottom right > Click the Send button
 
   <img src="../img/Tutorial_danny_demo.png" style="zoom:100%;" />
+  

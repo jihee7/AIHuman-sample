@@ -8,7 +8,7 @@ You can open AIHuman_WPF_Sample.sln first and run the following Sample App after
 
 **The SDK authentication is enabled automatically on this page**. When the screen appears, the authentication action is automatically called, so there is no need to take any other action. All you need to do is input the appId, userkey, uuid, and target platform obtained above. Once authenticated, authentication is maintained until the app is closed, so there is no need to authenticate again. If the menu still doesn't work, check if there is an error in the authentication function(AuthStart) callback. Most of the time, token refresh is the problem.
 
-#### Menu on HomeView(HomeView.xaml)
+**Menu on HomeView(HomeView.xaml)**
 
 Each menu is as follows.
 
@@ -18,7 +18,7 @@ Each menu is as follows.
 - with Google Dialogflow: Conversational AI example using AI Human and Google Dialogflow (DialogFlowView.xaml)
 - Exit: Exit the App (NavigationBar.xaml)
 
-#### 1. Quick Start (QuickStartView.xaml)
+#### 1. Quick Start
 
 In Quick Start, the following screen appears when the default AI creation and pre-preparation step is completed through AIPlayer. It may take several minutes until it starts speaking depending on the network conditions, as there is a default loading time on the first run. After the first utterance, you can press the input box at the bottom of the screen to type in a sentence that you want to make the AI say.  The default AI is Jonathan. (Basically speaking a language that corresponds to the language value set in AI. However, you can implement multilingual services using the following [Change the Voice or Language](#change-the-voice-or-language) functionality.)
 
@@ -28,7 +28,7 @@ In Quick Start, the following screen appears when the default AI creation and pr
 - Home: Go to HomeView.xaml
 - Exit: Close the app.
 
-#### 2. AI Human Demo (DemoView.xaml)
+#### 2. AI Human Demo
 
 AI Human Demo is a page where you can try out various functionalities of AIPlayer. You can try changing to another approved AI model through [AI Select]. For other details, please refer to [AIPlayer Description](#aiplayer-description).
 
@@ -167,7 +167,7 @@ RES_LOAD_STARTED: AI Resource loading started.
 SPEAKING_PREPARE_COMPLETED: AI finished preparation to speak.
 ```
 
-#### 3. with Playchat & Azure STT (PlaychatView.xaml)
+#### 3. with Playchat & Azure STT
 
 This demo is an example of a conversational AI service linked with AI Human + Playchat + Azure STT. Basically, AI Human and Playchat are in the form of chatting by the user inputting with the keyboard. Additionally, use Azure STT to **speak like a real person**. When the AI load is complete, the AI greets you. ("Hello, long time no see.") 
 
@@ -175,7 +175,7 @@ After the greeting, chat or click the STT button at the bottom to get a voice in
 
 <img src="../img/PlaychatWithAzureSTTDemo.png" style="zoom:100%;" />
 
-#### Using AI + Chatbot + Speech Recognition together
+**Using AI + Chatbot + Speech Recognition together**
 
 If you want to use the conversational AI service mentioned in the demo, you need to prepare as follows.
 
@@ -210,7 +210,7 @@ public void OnChatbotMessage(JObject response)
 }
 ```
 
-#### Data transfer format of Chatbot (Playchat)
+**Data transfer format of Chatbot (Playchat)**
 
 When speech is recognized through Azure STT, the content is delivered directly to the Playchat server. However, there are situations where you need to manually send a message or special signal to the chatbot. (This includes the "start" signal mentioned above.) To send the user's message, use the chatbot's Send function.
 
@@ -241,7 +241,7 @@ public const string VALUE_USERINPUT_NEXT = ":next";
 
 - OnMessage basically comes with the following values. In particular, if the next value is true for 'extra' here, it means that there are additional messages. 
 
-  ```C#
+```C#
   /* example
   {"func_name":"onMessage",
   	"args":
@@ -251,11 +251,11 @@ public const string VALUE_USERINPUT_NEXT = ":next";
     "image":{"url":"http://...,"displayname":"office image.jpg"}
     "extra":{next:true}}}
   */ 
-  ```
+```
 
 - If there is an additional message, you can receive the additional message by sending it by adding **":next" (VALUE_USERINPUT_NEXT)**, which is a special argument indication, as the argument text in userInput.
 
-  ```C#
+```C#
   private void RequestNextMessageIfNeeded(JObject args)
   {
       if (args != null)
@@ -271,17 +271,17 @@ public const string VALUE_USERINPUT_NEXT = ":next";
           }
       }
   }
-  ```
+```
 
 Many of the above explanations have been omitted. Open the solution file of the sample and refer to the Playchat.xaml and PlaychatViewModel.cs files.
 
-#### 4. with Google Dialogflow (DialogFlowView.xaml)
+#### 4. with Google Dialogflow
 
 This demo is a conversational AI service using AI Human and Google Dialogflow, and it is another example that shows that AI Human can be used together with other services such as Chatbot. (Actual operation is possible after Google Dialogflow is set up. It is explained below in this chapter.)
 
 <img src="../img/GoogleDialogflowDemo.png" style="zoom:100%;" />
 
-#### Using AI + Google Dialogflow together
+**Using AI + Google Dialogflow together**
 
 If you want to use the conversational AI service mentioned in the demo, you need to prepare as follows.
 

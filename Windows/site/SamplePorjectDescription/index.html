@@ -55,21 +55,13 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Sample Porject Description</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#menu-on-homeviewhomeviewxaml">Menu on HomeView(HomeView.xaml)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1-quick-start">1. Quick Start</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#1-quick-start-quickstartviewxaml">1. Quick Start (QuickStartView.xaml)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2-ai-human-demo">2. AI Human Demo</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-ai-human-demo-demoviewxaml">2. AI Human Demo (DemoView.xaml)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-with-playchat-azure-stt">3. with Playchat &amp; Azure STT</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-with-playchat-azure-stt-playchatviewxaml">3. with Playchat &amp; Azure STT (PlaychatView.xaml)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#using-ai-chatbot-speech-recognition-together">Using AI + Chatbot + Speech Recognition together</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#data-transfer-format-of-chatbot-playchat">Data transfer format of Chatbot (Playchat)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-with-google-dialogflow-dialogflowviewxaml">4. with Google Dialogflow (DialogFlowView.xaml)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#using-ai-google-dialogflow-together">Using AI + Google Dialogflow together</a>
+    <li class="toctree-l2"><a class="reference internal" href="#4-with-google-dialogflow">4. with Google Dialogflow</a>
     </li>
     </ul>
                 </li>
@@ -110,7 +102,7 @@
 <p>You can open AIHuman_WPF_Sample.sln first and run the following Sample App after build the solution.</p>
 <p><img src="../img/SampleApp_main.png" style="zoom:100%;" /></p>
 <p><strong>The SDK authentication is enabled automatically on this page</strong>. When the screen appears, the authentication action is automatically called, so there is no need to take any other action. All you need to do is input the appId, userkey, uuid, and target platform obtained above. Once authenticated, authentication is maintained until the app is closed, so there is no need to authenticate again. If the menu still doesn't work, check if there is an error in the authentication function(AuthStart) callback. Most of the time, token refresh is the problem.</p>
-<h4 id="menu-on-homeviewhomeviewxaml">Menu on HomeView(HomeView.xaml)</h4>
+<p><strong>Menu on HomeView(HomeView.xaml)</strong></p>
 <p>Each menu is as follows.</p>
 <ul>
 <li>Quick Start: Quickly see AI Human in action (QuickStartView.xaml)</li>
@@ -119,7 +111,7 @@
 <li>with Google Dialogflow: Conversational AI example using AI Human and Google Dialogflow (DialogFlowView.xaml)</li>
 <li>Exit: Exit the App (NavigationBar.xaml)</li>
 </ul>
-<h4 id="1-quick-start-quickstartviewxaml">1. Quick Start (QuickStartView.xaml)</h4>
+<h4 id="1-quick-start">1. Quick Start</h4>
 <p>In Quick Start, the following screen appears when the default AI creation and pre-preparation step is completed through AIPlayer. It may take several minutes until it starts speaking depending on the network conditions, as there is a default loading time on the first run. After the first utterance, you can press the input box at the bottom of the screen to type in a sentence that you want to make the AI say.  The default AI is Jonathan. (Basically speaking a language that corresponds to the language value set in AI. However, you can implement multilingual services using the following <a href="#change-the-voice-or-language">Change the Voice or Language</a> functionality.)</p>
 <p><img src="../img/Jonathan_demo.png" style="zoom:100%;" /></p>
 <ul>
@@ -127,7 +119,7 @@
 <li>Home: Go to HomeView.xaml</li>
 <li>Exit: Close the app.</li>
 </ul>
-<h4 id="2-ai-human-demo-demoviewxaml">2. AI Human Demo (DemoView.xaml)</h4>
+<h4 id="2-ai-human-demo">2. AI Human Demo</h4>
 <p>AI Human Demo is a page where you can try out various functionalities of AIPlayer. You can try changing to another approved AI model through [AI Select]. For other details, please refer to <a href="#aiplayer-description">AIPlayer Description</a>.</p>
 <p><img src="../img/WPF_Sample_DemoPage.png" style="zoom:100%;" /></p>
 <p><strong>First, get a list of available AIs and set up the UI. The Constants.appid, userKey, uuid, and targetPlatform below are parameters entered when calling AuthStart in HomeView.</strong></p>
@@ -246,11 +238,11 @@ RES_LOAD_COMPLETED: AI Resource loading completed.
 RES_LOAD_STARTED: AI Resource loading started.
 SPEAKING_PREPARE_COMPLETED: AI finished preparation to speak.
 </code></pre>
-<h4 id="3-with-playchat-azure-stt-playchatviewxaml">3. with Playchat &amp; Azure STT (PlaychatView.xaml)</h4>
+<h4 id="3-with-playchat-azure-stt">3. with Playchat &amp; Azure STT</h4>
 <p>This demo is an example of a conversational AI service linked with AI Human + Playchat + Azure STT. Basically, AI Human and Playchat are in the form of chatting by the user inputting with the keyboard. Additionally, use Azure STT to <strong>speak like a real person</strong>. When the AI load is complete, the AI greets you. ("Hello, long time no see.") </p>
 <p>After the greeting, chat or click the STT button at the bottom to get a voice input signal, say "<strong>where are you</strong>". (Actual operation is possible after the Azure STT setup is completed. It is explained below in this chapter.) The AI understands the voice and the AI gives an appropriate answer. Currently, as it is a test chatbot, it can answer only a few limited questions, but if the chatbot is advanced, it can be used in various ways, such as ordering at a restaurant or making a reservation for a performance depending on the situation. In addition, the chatbot can also display images by sending <strong>additional information</strong> in addition to text.</p>
 <p><img src="../img/PlaychatWithAzureSTTDemo.png" style="zoom:100%;" /></p>
-<h4 id="using-ai-chatbot-speech-recognition-together">Using AI + Chatbot + Speech Recognition together</h4>
+<p><strong>Using AI + Chatbot + Speech Recognition together</strong></p>
 <p>If you want to use the conversational AI service mentioned in the demo, you need to prepare as follows.</p>
 <ul>
 <li>Prepare your Playchat Bot ID: Already prepared in the sample (https://www.playchat.ai/docs/en/menual-chatbot-en.html)</li>
@@ -279,7 +271,7 @@ public void OnChatbotMessage(JObject response)
     }
 }
 </code></pre>
-<h4 id="data-transfer-format-of-chatbot-playchat">Data transfer format of Chatbot (Playchat)</h4>
+<p><strong>Data transfer format of Chatbot (Playchat)</strong></p>
 <p>When speech is recognized through Azure STT, the content is delivered directly to the Playchat server. However, there are situations where you need to manually send a message or special signal to the chatbot. (This includes the "start" signal mentioned above.) To send the user's message, use the chatbot's Send function.</p>
 <pre><code class="language-c#">bool Send(string command, JObject detail)
 </code></pre>
@@ -308,21 +300,20 @@ public const string VALUE_USERINPUT_NEXT = &quot;:next&quot;;
 <p>OnMessage basically comes with the following values. In particular, if the next value is true for 'extra' here, it means that there are additional messages. </p>
 </li>
 </ul>
-<p><code>C#
-  /* example
-  {"func_name":"onMessage",
-    "args":
-    {"kind":"Content",
-    "text":"Hello,  long time no see.",
-    "languages":{"en":"Hello,  long time no see."},
-    "image":{"url":"http://...,"displayname":"office image.jpg"}
-    "extra":{next:true}}}
-  */</code></p>
+<pre><code class="language-C#">  /* example
+  {&quot;func_name&quot;:&quot;onMessage&quot;,
+    &quot;args&quot;:
+    {&quot;kind&quot;:&quot;Content&quot;,
+    &quot;text&quot;:&quot;Hello,  long time no see.&quot;,
+    &quot;languages&quot;:{&quot;en&quot;:&quot;Hello,  long time no see.&quot;},
+    &quot;image&quot;:{&quot;url&quot;:&quot;http://...,&quot;displayname&quot;:&quot;office image.jpg&quot;}
+    &quot;extra&quot;:{next:true}}}
+  */ 
+</code></pre>
 <ul>
 <li>If there is an additional message, you can receive the additional message by sending it by adding <strong>":next" (VALUE_USERINPUT_NEXT)</strong>, which is a special argument indication, as the argument text in userInput.</li>
 </ul>
-<p><code>C#
-  private void RequestNextMessageIfNeeded(JObject args)
+<pre><code class="language-C#">  private void RequestNextMessageIfNeeded(JObject args)
   {
       if (args != null)
       {
@@ -336,12 +327,13 @@ public const string VALUE_USERINPUT_NEXT = &quot;:next&quot;;
               }
           }
       }
-  }</code></p>
+  }
+</code></pre>
 <p>Many of the above explanations have been omitted. Open the solution file of the sample and refer to the Playchat.xaml and PlaychatViewModel.cs files.</p>
-<h4 id="4-with-google-dialogflow-dialogflowviewxaml">4. with Google Dialogflow (DialogFlowView.xaml)</h4>
+<h4 id="4-with-google-dialogflow">4. with Google Dialogflow</h4>
 <p>This demo is a conversational AI service using AI Human and Google Dialogflow, and it is another example that shows that AI Human can be used together with other services such as Chatbot. (Actual operation is possible after Google Dialogflow is set up. It is explained below in this chapter.)</p>
 <p><img src="../img/GoogleDialogflowDemo.png" style="zoom:100%;" /></p>
-<h4 id="using-ai-google-dialogflow-together">Using AI + Google Dialogflow together</h4>
+<p><strong>Using AI + Google Dialogflow together</strong></p>
 <p>If you want to use the conversational AI service mentioned in the demo, you need to prepare as follows.</p>
 <ul>
 <li>Preparing the Dialogflow Credential File: https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.V2/latest</li>
