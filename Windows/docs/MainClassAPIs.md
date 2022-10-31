@@ -19,7 +19,7 @@ The APIs of the main classes of AI Human SDK are briefly described.
 | `void`                               | `Send(string[] sentences)` Let the AI speak. (using pure-text string) |
 | `void`                               | `Send(AIClipSet[] clips)` Let the AI play. (using AIHuman.Common.Model.AIClipSet) |
 | `void`                               | `StopSpeaking()` Stop the current conversation. It also deletes the content in the speaking queue. |
-| `float`                              | `Speed { get; set; } `Get or Set the AI's speech rate.       |
+| `float`                              | `Speed { get; set; }` Get or Set the AI's speech rate.       |
 | `float`                              | `Scale { get; set; }` Get or Set the AI's scale.             |
 | `AIHuman.Common.Margin`              | `Margin { get; set; }` Get or Set the AI's margin.           |
 | `System.Windows.Controls.MediaState` | `PlayerState { get; }` Get the state of AIPlayer             |
@@ -35,9 +35,9 @@ The APIs of the main classes of AI Human SDK are briefly described.
 
 | Modifier and Type | Method and Description                                       |
 | ----------------- | ------------------------------------------------------------ |
-| `void`            | `onAIPlayerError(AIError error)` Reporting an error occurred in AIPlayer |
-| `void`            | `onAIPlayerResLoadingProgressed(int current, int total)`Reporting the resource loading progress of AIPlayer |
-| `void`            | `onAIStateChanged(AIState state)`Reporting the changed state of AI |
+| `void`            | `OnAIPlayerError(AIError error)` Reporting an error occurred in AIPlayer |
+| `void`            | `OnAIPlayerResLoadingProgressed(int current, int total)` Reporting the resource loading progress of AIPlayer |
+| `void`            | `OnAIStateChanged(AIState state)` Reporting the changed state of AI |
 
 <br/>
 

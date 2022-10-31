@@ -1,7 +1,9 @@
 # Project Set up
 
-**1. Create a New Project in Visual Studio(2019).**
-**Create New Project > WPF Application > Target Framework > .NET 5.0**
+**1. Create a New Project in Visual Studio(2019).**  
+
+**Create New Project > WPF Application > Target Framework > .NET 5.0**  
+
 **WpfApp1 is the default when creating a project.**
 
 <br/>

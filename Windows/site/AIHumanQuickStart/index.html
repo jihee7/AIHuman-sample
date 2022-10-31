@@ -96,16 +96,20 @@
 <p><strong>Create a project in <a href="https://aitalk.deepbrainai.io">SDK Website</a>, enter App Id of Windows and click confirm. Then User Key will be issued.</strong></p>
 <p><img src="../img/SDK_WebPage_UserKey.png" style="zoom:100%;" /></p>
 <p>Implement the AuthStart function: input appId, userKey, uuid, and platform information.</p>
-<pre><code>- appId is a unique Id of the project, and is generally created like "com.example.project.appname".
-- userkey can be obtained by creating a project on the AIHuman website and registering the appId.
-- uuid refers to the unique ID of the device where the application is installed. It is created by calling Guid.NewGuid(), and saved and reused after initial creation so that it does not change each time it is called.
-- platform argument uses "wnds", which means windows.
-</code></pre>
+<ul>
+<li>appId is a unique Id of the project, and is generally created like "com.example.project.appname".</li>
+<li>userkey can be obtained by creating a project on the AIHuman website and registering the appId.</li>
+<li>uuid refers to the unique ID of the device where the application is installed. It is created by calling Guid.NewGuid(), and saved and reused after initial creation so that it does not change each time it is called.</li>
+<li>platform argument uses "wnds", which means windows.</li>
+</ul>
+<p><br/></p>
 <p><strong>2. Create AIPlayer through CreateQuickStartViewModel using INavigationService.</strong></p>
-<pre><code>1. Create a QuickStartView and a QuickStartViewModel that will contain AIPlayer.
-2. Create a Layout Component (parent layout) to which AIPlayer will be added at the location where you want to show AIPlayer of QuickStartView.
-3. Binding AIPlayer Object of QuickStartViewModel to QuickStartView.
-</code></pre>
+<ol>
+<li>Create a QuickStartView and a QuickStartViewModel that will contain AIPlayer.</li>
+<li>Create a Layout Component (parent layout) to which AIPlayer will be added at the location where you want to show AIPlayer of QuickStartView.</li>
+<li>Binding AIPlayer Object of QuickStartViewModel to QuickStartView.</li>
+</ol>
+<p><br/></p>
 <p><strong>3. In QuickStartViewModel, it is possible to receive callback of AIState by IAIPlayerCallback.</strong></p>
 <p>Implement the command for speaking and default AI operation.</p>
 <pre><code class="language-C#">private void Speak_Command(object args)
@@ -119,7 +123,7 @@
     }
 }
 </code></pre>
-<p>There are many omitted parts in the above explanation. Please refer to App.xaml, QuickStartView.xaml, and QuickStartViewModel.cs files by opening the Solution file of the given Sample. </p>
+<p>There are many omitted parts in the above explanation. Please refer to App.xaml, QuickStartView.xaml, and QuickStartViewModel.cs files by opening the Solution file of the given Sample.  </p>
               
             </div>
           </div><footer>
