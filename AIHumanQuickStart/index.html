@@ -51,12 +51,6 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">AIHuman Quick Start</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-the-sdk-authentication-process-is-performed-in-the-partial-class-app-systemwindowsapplication">1. The SDK authentication process is performed in the partial class App : System.Windows.Application.</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-create-aiplayer-through-createquickstartviewmodel-using-inavigationservice">2. Create AIPlayer through CreateQuickStartViewModel using INavigationService.</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-in-quickstartviewmodel-it-is-possible-to-receive-callback-of-aistate-by-iaiplayercallback">3. In QuickStartViewModel, it is possible to receive callback of AIState by IAIPlayerCallback.</a>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -98,7 +92,7 @@
                 <h1 id="aihuman-quick-start">AIHuman Quick Start</h1>
 <p><img src="../img/QuickStart_Main.png" style="zoom:100%;" /></p>
 <p>In this chapter, we will quickly set up AIPlayer with the default AI and learn about AI speaking process. When setting up AIPlayer for the first time, it may take several minutes to load depending on the network condition.</p>
-<h4 id="1-the-sdk-authentication-process-is-performed-in-the-partial-class-app-systemwindowsapplication">1. The SDK authentication process is performed in the partial class App : System.Windows.Application.</h4>
+<p><strong>1. The SDK authentication process is performed in the partial class App : System.Windows.Application.</strong></p>
 <p><strong>Create a project in <a href="https://aitalk.deepbrainai.io">SDK Website</a>, enter App Id of Windows and click confirm. Then User Key will be issued.</strong></p>
 <p><img src="../img/SDK_WebPage_UserKey.png" style="zoom:100%;" /></p>
 <p>Implement the AuthStart function: input appId, userKey, uuid, and platform information.</p>
@@ -107,12 +101,12 @@
 - uuid refers to the unique ID of the device where the application is installed. It is created by calling Guid.NewGuid(), and saved and reused after initial creation so that it does not change each time it is called.
 - platform argument uses "wnds", which means windows.
 </code></pre>
-<h4 id="2-create-aiplayer-through-createquickstartviewmodel-using-inavigationservice">2. Create AIPlayer through CreateQuickStartViewModel using INavigationService.</h4>
+<p><strong>2. Create AIPlayer through CreateQuickStartViewModel using INavigationService.</strong></p>
 <pre><code>1. Create a QuickStartView and a QuickStartViewModel that will contain AIPlayer.
 2. Create a Layout Component (parent layout) to which AIPlayer will be added at the location where you want to show AIPlayer of QuickStartView.
 3. Binding AIPlayer Object of QuickStartViewModel to QuickStartView.
 </code></pre>
-<h4 id="3-in-quickstartviewmodel-it-is-possible-to-receive-callback-of-aistate-by-iaiplayercallback">3. In QuickStartViewModel, it is possible to receive callback of AIState by IAIPlayerCallback.</h4>
+<p><strong>3. In QuickStartViewModel, it is possible to receive callback of AIState by IAIPlayerCallback.</strong></p>
 <p>Implement the command for speaking and default AI operation.</p>
 <pre><code class="language-C#">private void Speak_Command(object args)
 {
