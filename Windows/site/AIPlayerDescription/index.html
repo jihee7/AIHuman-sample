@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>AIPlayer Description - AI Human SDK for Windows</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AIPlayer Description";
+        var mkdocs_page_input_path = "AIPlayerDescription.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI Human SDK for Windows
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Introduction/">Introduction</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ProjectSetup/">Project Set up</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AIHumanQuickStart/">AIHuman Quick Start</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SamplePorjectDescription/">Sample Porject Description</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">AIPlayer Description</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-aiplayer-set-up">1. AIPlayer Set up</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#full-setup-process-4-steps">Full setup process (4 steps)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-organize-your-layout">Step 1. Organize your layout</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-prepare-authentication-related-information">Step 2. Prepare authentication-related information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-implement-authstart-and-get-the-ai-list">Step 3. Implement AuthStart and Get the AI list</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-4-initialize-aiplayer-to-the-desired-ai">Step 4. Initialize AIPlayer to the desired AI</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-aiplayer-resources-and-states">2. AIPlayer Resources and States</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#start-loading-resources">Start loading resources</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#monitoring-player-state-through-iaiplayercallback-implementation">Monitoring player state through IAIPlayerCallback implementation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-aiplayer-basic-speaking-features">3. AIPlayer Basic Speaking Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-speaking-using-aiclipset-and-monitor-ai-speaking">Basic Speaking using AIClipSet and Monitor AI Speaking</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#speaking-related-monitoring">Speaking related Monitoring</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aiplayer-speaking-related-features">AIPlayer Speaking related Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pause-speaking">Pause speaking</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#resume-speaking">Resume Speaking</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stop-speaking">Stop speaking</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-aiplayer-advanced-speaking-features">4. AIPlayer Advanced Speaking Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#change-ai-speech-rate">Change AI Speech Rate</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestures">Gestures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#monitoring-callbacks-of-gesture-actions">Monitoring callbacks of gesture actions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#change-the-voice-or-language">Change the Voice or Language</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-the-custom-voice-using-aiplayers-method">Set the custom voice using AIPlayer's method</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-the-custom-voice-using-aiclipset">Set the custom voice using AIClipSet</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preload">Preload</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#preload-related-monitoring">Preload related Monitoring</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#speak-multiple-sentences-consecutively">Speak Multiple Sentences Consecutively</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#multi-speak-related-monitoring">Multi Speak related Monitoring</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-functionalities-other-than-ai-speaking-mainly-related-to-ai-settings">5. Functionalities other than AI Speaking (mainly related to AI settings)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#change-ai-sizescale">Change AI Size(Scale)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#change-ai-positionmargin">Change AI Position(Margin)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-error-index">6. Error Index</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../MainClassAPIs/">Main Class APIs</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI Human SDK for Windows</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>AIPlayer Description</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aiplayer-description">AIPlayer Description</h1>
+<p>In this chapter, we will learn how to set up and use the AIPlayer object that can perform specific actions by actually displaying AI Human.</p>
+<p>AIPlayer consists of UserControl type View and ViewModel that controls related routines. For more details, please refer to the contents below and the main class API manual.</p>
+<p><strong>Dev Tips!</strong></p>
+<ul>
+<li>The concepts of MVVM, Dependency Injection, and Data Binding are applied to AI Human SDK and WPF Sample.</li>
+<li>When developing a custom app by using the SDK, create an AIHuman.Media.AIPlayer object. When composing a screen, obtain a View object by using the GetObject() function of AIPlayer and place it.</li>
+<li>It is recommended to use Data Binding for properties such as margin, size, and speed in AIPlayer.</li>
+<li>For ViewModel related to SDK in Custom App, it is recommended to inherit and implement AIHuman.Common.Base.ViewModelBase, AIHuman.Interface.IAIPlayerCallback.</li>
+<li>It is recommended to call the Dispose() function of the object before destroying or terminating the AIPlayer. (AIPlayerViewModel is a Dispoable object.)</li>
+</ul>
+<h3 id="1-aiplayer-set-up">1. AIPlayer Set up</h3>
+<h4 id="full-setup-process-4-steps">Full setup process (4 steps)</h4>
+<ul>
+<li>Step 1: Add AIPlayer's parent layout to the page you want to use</li>
+<li>Step 2: Prepare AppID, authentication key, uuid, and platform that will be used in the AuthStart function</li>
+<li>Step 3: Get the AI to use by implementing the AuthStart response</li>
+<li>Step 4: Initialize AIPlayer to the desired AI</li>
+</ul>
+<p><br/></p>
+<p>You can create AIPlayer and get the View(UserControl) object through the GetObject() function.</p>
+<pre><code class="language-c#">// practical use example
+private AIPlayer _aiPlayer; // AIPlayer object to be used in cs
+public AIPlayerView AIPlayerObject  // View (UserControl) of AIPlayer to be used in xaml
+{
+    get =&gt; _aiPlayer.GetObject();
+    private set =&gt; OnPropertyChanged(nameof(AIPlayerObject));
+}
+</code></pre>
+<h4 id="step-1-organize-your-layout">Step 1. Organize your layout</h4>
+<p>Configure the View to use AI Human in the XAML file. Create a ContentControl to place the AI and bind the AIPlayer. In the CS file, the property of the actual binding object is defined.</p>
+<pre><code class="language-c#">public AIPlayerView AIPlayerObject
+{
+    get =&gt; _aiPlayer.GetObject();
+    private set =&gt; OnPropertyChanged(nameof(AIPlayerObject));
+}
+</code></pre>
+<pre><code class="language-c#">...
+    &lt;Grid&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition/&gt;
+            &lt;ColumnDefinition/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+
+        &lt;ContentControl Margin=&quot;0&quot; Grid.Column=&quot;0&quot; Content=&quot;{Binding Path=AIPlayerObject}&quot; /&gt;
+    &lt;/Grid&gt;
+...
+</code></pre>
+<h4 id="step-2-prepare-authentication-related-information">Step 2. Prepare authentication-related information</h4>
+<p>The AuthStart function requires 4 parameters. These four are AppID, UserKey, uuid, and Platform information.</p>
+<p>UserKey is a unique string generated by DeepBrain AI and should never be disclosed. If you call the API using this authentication key, you will receive available Default AI data and a token to be used in the future.</p>
+<p><strong>If token refresh is required because the token expired, it can be refreshed by calling AuthStart() again.</strong></p>
+<h4 id="step-3-implement-authstart-and-get-the-ai-list">Step 3. Implement AuthStart and Get the AI list</h4>
+<p>If you have all the necessary AuthStart function parameters mentioned in step 2, you are ready for authentication. Input these parameters inti AuthStart  AIHuam.AIAPI.Instance and implement a callback function. If authentication is successful, AI list will be returned. If you do not have permission to any of the AIs, aiList returns null.</p>
+<pre><code class="language-c#">AIHuman.Core.AIAPI.Instance.AuthStart(&quot;appId&quot;, &quot;userKey&quot;, &quot;UUID&quot;, &quot;wnds&quot;
+        , (aiLIst, error) =&gt;
+      {
+      string message = string.Empty;
+      if(string.IsNullOrEmpty(error) &amp;&amp; aiLIst != null)
+      {
+        string jsonStr = aiLIst.Root.ToString();
+          AIHuman.Core.AIAPI.AIList list = 
+                    Newtonsoft.Json.JsonConvert.DeserializeObject&lt;AIHuman.Core.AIAPI.AIList&gt;(jsonStr);
+        message = string.Format(&quot;Auth Complete, Avaliable Count : {0}&quot;, list.ai.Length);
+
+        /* e.g.)
+          &quot;succeed&quot;:true,
+          &quot;ai&quot;:[{&quot;aiName&quot;:&quot;vida&quot;,&quot;aiDisplayName&quot;:&quot;Vida&quot;,&quot;language&quot;:&quot;en&quot;},
+                {&quot;aiName&quot;:&quot;bret&quot;,&quot;aiDisplayName&quot;:&quot;Bret&quot;,&quot;language&quot;:&quot;en&quot;},
+                {&quot;aiName&quot;:&quot;danny&quot;,&quot;aiDisplayName&quot;:&quot;Danny&quot;,&quot;language&quot;:&quot;en&quot;},
+                {&quot;aiName&quot;:&quot;kang&quot;,&quot;aiDisplayName&quot;:&quot;Kang&quot;,&quot;language&quot;:&quot;ko&quot;}]
+          */
+      }
+      else
+      {
+        message = string.Format(&quot;Auth Error : {0}&quot;, error);
+      }
+
+      AIHuman.Util.Log.LogWrite(message);
+      }
+  );
+</code></pre>
+<h4 id="step-4-initialize-aiplayer-to-the-desired-ai">Step 4. Initialize AIPlayer to the desired AI</h4>
+<p>After authenticating and checking the list of available AIs, it is necessary to initialize the AI first in order to actually use a specific AI. To initialize it, create AIPlayer with the desired AIName as shown below. If there is an existing AIPlayer, delete it and create a new one.</p>
+<p>Once you initialize, AIPlayer downloads necessary resources based on initial settings and becomes active. You can also receive AI status through callback function registered in the second argument of the AIPlayer constructor.</p>
+<pre><code class="language-c#">...   
+public AIPlayer AIPlayerObject // View Binding object
+{
+    ...
+}
+...
+private void UpdateSelectedAI()
+{
+    if (_aiPlayer != null)
+    {
+        _aiPlayer.Dispose();
+        _aiPlayer = null;
+    }
+
+    if (_speechList != null)
+    {
+        _speechList.Clear();
+        _speechList = null;
+    }
+
+    AIPlayer _aiPlayer = new(SelectedAI.AIName, this);
+    AIPlayerObject = _aiPlayer.GetObject();
+
+    SpeechList = new ObservableCollection&lt;string&gt;(AIAPI.Instance.GetSampleTexts(SelectedAI.AIName));
+    SpeechList.Insert(0, Resource.DefaultSpeech);
+...
+}
+</code></pre>
+<p><br/></p>
+<h3 id="2-aiplayer-resources-and-states">2. AIPlayer Resources and States</h3>
+<h4 id="start-loading-resources">Start loading resources</h4>
+<p>When AIPlayer is created after authentication is completed, resource loading starts according to the input <strong>AIName</strong>, and the resource loading status is reported to the listener (IAIPlayerCallback) registered in the constructor. (Initially, it may take a few minutes for the resource to complete loading.)</p>
+<p><br/></p>
+<h4 id="monitoring-player-state-through-iaiplayercallback-implementation">Monitoring player state through IAIPlayerCallback implementation</h4>
+<p>The values for the parameter AIState.state in the listener method onAIStateChanged(AIStatePublisher.AIState state) are shown below. You can also implement loading progress with onAIPlayerResLoadingProgressed(int current, int total).</p>
+<ul>
+<li>AIState.RES_LOAD_STARTED : resource loading is started.</li>
+<li>AIState.RES_LOAD_COMPLETED : resource loading is completed.</li>
+</ul>
+<p>If there is any problem during this process, the onAIPlayerError() method is called. Typically, a response from the onAIPlayerError() may be notifying the expiration of the authentication token. An appropriate response is required depending on the situation.</p>
+<ul>
+<li>AIError.SDK_API_ERR : Notifies error in authentication process API.</li>
+</ul>
+<p>##### e.g.) 1402 error (value token expired): Token refresh required -&gt; Call AuthStart() method again</p>
+<pre><code class="language-c#">// AI resource related status CallBack
+public void onAIStateChanged(AIState state)
+{
+        ...
+    if (state.state == AIState.RES_LOAD_STARTED)
+    {
+        message = &quot;AI Resource loading started.&quot;;
+           ...
+    }
+    else if (state.state == AIState.RES_LOAD_COMPLETED)
+    {
+        message = &quot;AI Resource loading completed.&quot;;
+                ...
+    }
+     ...
+}
+
+// AI resource loading progress CallBack
+public void onAIPlayerResLoadingProgressed(int current, int total)
+{
+    float progress = ((float) current / (float) total) * 100;
+    message = string.Format(&quot;AI Resource Loading... {0}%&quot;, (int)progress);
+}
+
+// AI error CallBack
+public void onAIPlayerError(AIError error)
+{
+  if (error.SDK_API_ERR == error.errorType) 
+  {
+    Debug.LogError(string.Format(&quot;sdk_ai_Info error : {0}&quot;, error.exInfo));
+
+    string errorDesc = error.exInfo;
+    if (string.IsNullOrEmpty(errorDesc))
+    {
+        JSONObject json = null;
+        try
+        {
+            json = new JSONObject(errorDesc);
+        }
+        catch (JsonException ex)
+        {
+            Log.log(ex.Message);
+            Debug.LogError(string.Format(&quot;Json Exception Error : {0}&quot;, ex.Message));
+        }
+
+        if (json != null &amp;&amp; json.optInt(Constants.KEY_ERRORCODE, -1) ==
+            Constants.API_ERRORCODE_TOKEN_EXPIRED)
+        {
+            // refresh token
+        }
+    }
+  }
+}
+</code></pre>
+<p><br/></p>
+<h3 id="3-aiplayer-basic-speaking-features">3. AIPlayer Basic Speaking Features</h3>
+<h4 id="basic-speaking-using-aiclipset-and-monitor-ai-speaking">Basic Speaking using AIClipSet and Monitor AI Speaking</h4>
+<p>After AIPlayer resource is loaded, call <strong>Send method</strong>. To activate the function, in the sample below, select the sentence to speak through the drop-down menu and click the <strong>Play</strong> button on the right.</p>
+<p>In general, speech can be performed using pure text, but speech can also be performed using <a href="#main-class-apis">AIHuman.Common.Model.AIClipSet</a>. Also, speech can be performed along with a specific gesture. For example, you could instruct the AI to say hello by waving his hand. This is called gesture speech. Details are explained in <a href="#main-class-apis">Gesture speech related parts</a>.</p>
+<p>If the text to speak is too long, it may not be possible to synthesize the resources required for the utterance. There are some models that can synthesize long sentences. Although it varies from ai to ai, it is generally recommended that sentences be cut to an appropriate length in Korean, usually within 30 to 40 characters, and at a similar level in English.</p>
+<p><img src="/img/Speak_Haylyn.png" style="zoom:100%;" /></p>
+<pre><code class="language-c#">// using pure-text
+_aiPlayer.Send(new[] {&quot;this is sample sentence.&quot;});
+// using AIClipSet
+AIClipSet clip = AIAPI.CreateClipSet(&quot;this is sample sentence.&quot;);
+_aiPlayer.Send(new[] {clip});
+</code></pre>
+<h4 id="speaking-related-monitoring">Speaking related Monitoring</h4>
+<p>After the Send method is called, you can listen to the operation status feedback in the registered listener. This feedback is returned by calling the method (onAIStateChanged) of the listener(IAIPlayerCallback). onAIStateChanged sequentially returns the following AIState values. </p>
+<ul>
+<li>SPEAKING_PREPARE_STARTED </li>
+<li>SPEAKING_PREPARE_COMPLETED</li>
+<li>SPEAKING_STARTED</li>
+<li>SPEAKING_COMPLETED</li>
+</ul>
+<pre><code class="language-c#">// Speaking related CallBack example
+public void onAIStateChanged(AIState state)
+{
+    if (state.state == AIState.SPEAKING_PREPARE_STARTED)
+    {
+        _txtStatus.text = &quot;AI started preparation to speak.&quot;;
+    } 
+    else if (state.state == AIState.SPEAKING_PREPARE_COMPLETED)
+    {
+        _txtStatus.text = &quot;AI finished preparation to speak.&quot;;
+    }
+    else if (state.state == AIState.SPEAKING_STARTED)
+    {
+        _txtStatus.text = &quot;AI started speaking.&quot;;
+    }
+    else if (state.state == AIState.SPEAKING_COMPLETED)
+    {
+        _txtStatus.text = &quot;AI finished speaking.&quot;;
+    }
+}
+
+// AI error CallBack example
+public void onAIPlayerError(AIError error)
+{
+    if (error.errorType == AIError.SOCKET_ERR)
+    {
+        _txtStatus.text = &quot;Socket Error: &quot; + error.exInfo;
+    }
+    else if (error.errorType == AIError.RES_LOAD_ERR)
+    {
+        _txtStatus.text = &quot;Resource Error: &quot; + error.exInfo);
+    }
+    else if (error.errorType == AIError.SPEAK_SEND_ERR)
+    {
+        _txtStatus.text = &quot;Speak Error: &quot; + error.exInfo);
+    }
+}
+</code></pre>
+<p><br/></p>
+<h3 id="aiplayer-speaking-related-features">AIPlayer Speaking related Features</h3>
+<p>The following are actions that can be performed while the AIPlayer is Speaking.</p>
+<h4 id="pause-speaking">Pause speaking</h4>
+<p>: Pause speaking.</p>
+<pre><code class="language-c#">// pause method
+_aiPlayer.Pause()
+</code></pre>
+<h4 id="resume-speaking">Resume Speaking</h4>
+<p>: Resume speaking. (resume from pause)</p>
+<pre><code class="language-c#">// resume method
+_aiPlayer.Resume()
+</code></pre>
+<h4 id="stop-speaking">Stop speaking</h4>
+<p>: Stop speaking and reset all data. (cannot resume)</p>
+<pre><code class="language-c#">// stop method
+_aiPlayer.StopSpeaking()
+</code></pre>
+<p><br/></p>
+<h3 id="4-aiplayer-advanced-speaking-features">4. AIPlayer Advanced Speaking Features</h3>
+<p>All functions other than speaking(mostly related to AI settings) of AIPlayer are described below.</p>
+<p>After the resource load required for AI operation is completed, some settings of AIPlayer can be adjusted. When the resource loading is completed (RES_LOAD_COMPLETED), the state changes such that actual operations can be performed(Idle). On right side of the panel, <strong>Voice, Gesture, Speed</strong>, etc. can be adjusted as shown below.</p>
+<h4 id="change-ai-speech-rate">Change AI Speech Rate</h4>
+<p>: You can set the speech rate of AI. The possible value range is from 0.5 to 1.5.</p>
+<pre><code class="language-c#">// set Property
+_aiPlayer.Speed = value;
+</code></pre>
+<p><br/></p>
+<h3 id="gestures">Gestures</h3>
+<p>As briefly mentioned above, speech can also be performed using <a href="#main-class-apis">ClipSet</a>. The ClipSet here refers to one action unit in a series of AI actions. There are three types of ClipSet: general speech that performs only speaking, speech with gesture, and gesture only. The Gesture can be used depending on whether the AI model supports <a href="#main-class-apis">Gestures</a>, and the list of available gestures can be checked using the <a href="#main-class-apis">GetGestures</a> function of AIPlayer. Even a model that does not support gestures can be operated using ClipSet.</p>
+<p>Clipset types are as follows.</p>
+<ul>
+<li><a href="#main-class-apis">Clip Type</a></li>
+<li>CLIP_SPEECH: Clip only for speech without gestures</li>
+<li>CLIP_GESTURE: Gesture only Clip</li>
+<li>CLIP_SPEECH_GESTURE: Clip for speech with gestures</li>
+</ul>
+<p>In the sample screenshot below, an AI model named Jonathan is speaking while waving his hand with a "hi" gesture.</p>
+<p><img src="/img/Jonathan_Gesture_Demo.png" style="zoom:100%;" /></p>
+<pre><code class="language-c#">using AIHuman.Common.Model;
+using AIHuman.Core;
+using AIHuman.Media;
+...
+private ObservableCollection&lt;AIGesture&gt; _gestures;
+...
+_gestures = _aiPlayer.GetGestures();
+...
+AIGesture gesture = _gestures[index];
+
+AIClipSet clip = AIAPI.CreateClipSet(&quot;nice to meet you.&quot;, gesture.Name);
+
+_aiPlayer.Send(new[] {clip});
+</code></pre>
+<h4 id="monitoring-callbacks-of-gesture-actions">Monitoring callbacks of gesture actions</h4>
+<p>IAIPlayerCallback.OnAIStateChanged(AIState) is called in the same way as the speech actions. The state value of AIState is called as follows to know the state. However, since AIState.GetAIMsg().Clip.Type, GestureName, and SpeechText are known here, it is possible to know whether it is a gesture action or just a speech action.</p>
+<ul>
+<li>SPEAKING_PREPARE_STARTED </li>
+<li>SPEAKING_PREPARE_COMPLETED</li>
+<li>SPEAKING_STARTED</li>
+<li>SPEAKING_COMPLETED</li>
+</ul>
+<p><br/></p>
+<h3 id="change-the-voice-or-language">Change the Voice or Language</h3>
+<p>Some AIs can speak with other voices besides basic voices. It is also possible to speak other language than the basic voice's language if the supported voice's language is different from the basic language of AI. You can check the sample for a list of voices that are currently available to a AI.</p>
+<p><img src="/img/CustomVoice_GCE.png" style="zoom:100%;" /></p>
+<h4 id="set-the-custom-voice-using-aiplayers-method">Set the custom voice using AIPlayer's method</h4>
+<p>You can check which voice AI can use by the following method. CustomVoice has properties of id, name, language, and tag.</p>
+<pre><code class="language-C#">ObservableCollection&lt;CustomVoice&gt; customVoices = _aiPlayer.GetCustomVoices();
+</code></pre>
+<p>If you know the id of the desired voice, you can find the desired voice using the following method. If there is none, return null.</p>
+<pre><code class="language-C#">CustomVoice myVoice = _aiPlayer.FindCustomVoice(voiceId);
+</code></pre>
+<p>Direct change to the desired voice on the aplayer is set as follows, and is set to the default voice when null is entered. Returns true when success.</p>
+<pre><code class="language-C#">CustomVoice myVoice = _aiPlayer.GetCustomVoices()[2];
+_aiPlayer.SetCustomVoice(myVoice);
+</code></pre>
+<h4 id="set-the-custom-voice-using-aiclipset">Set the custom voice using AIClipSet</h4>
+<p>In addition to the method of using the setCustomVoice method to set a voice other than the basic voice, AIClipSet can be used to speak the desired voice as follows.</p>
+<pre><code class="language-C#">CustomVoice myVoice = _aiPlayer.GetCustomVoices()[0];
+AIClipSet aiClipSet = AIAPI.CreateClipSet(&quot;this is sample sentence.&quot;, null, myVoice);
+_aiPlayer.Send(new[] {aiClipSet});
+</code></pre>
+<p><br/></p>
+<h3 id="preload">Preload</h3>
+<p>Preload is used when you want to make the AI speak the next sentence without delay by loading sentences in advance. You could think of it as a caching process. Select a sentence and press the <strong>Preload</strong> button in the sample below to perform the corresponding action.</p>
+<p><br/></p>
+<p><img src="/img/Haylyn_Preload.png" style="zoom:100%;" /></p>
+<p><br/></p>
+<pre><code class="language-c#">// using pure-text
+_aiPlayer.Preload(new[] {&quot;sentence&quot;});
+// using AIClipSet
+_aiPlayer.Preload(new[] {clip});
+</code></pre>
+<p><br/></p>
+<h4 id="preload-related-monitoring">Preload related Monitoring</h4>
+<p>AIPlayerCallback.onAIStateChanged(AIState) is called during the preload operation just like the speaking operation. The value of AIState is shown below.</p>
+<ul>
+<li>SPEAKING_PREPARE_PRELOAD_STARTED</li>
+<li>SPEAKING_PREPARE_PRELOAD_COMPLETED</li>
+</ul>
+<p><br/></p>
+<p>When the AI has several sentences to speak, it first processes the very first sentence. Once the returned state from onAIStateChanged is SPEAKING_STARTED, which is when the AI starts to speak the first sentence, the next sentence can be preloaded. If you play the next sentence after the state update to SPEAKING_PREPARE_PRELOAD_COMPLETED, there will be minimum delays between sentences. </p>
+<pre><code class="language-c#">// AI Preload related CallBack
+public void onAIStateChanged(AIState aiState)
+{
+        ...
+    if (aiState.state == AIState.SPEAKING_PREPARE_PRELOAD_STARTED)
+    {
+        _txtStatus.text = &quot;AI started preparation to preload.&quot;;
+    }
+    else if (aiState.state == AIState.SPEAKING_PREPARE_PRELOAD_COMPLETED)
+    {
+        _txtStatus.text = &quot;AI finished preparation to preload.&quot;;
+    }
+        ...
+}
+</code></pre>
+<p><br/></p>
+<h3 id="speak-multiple-sentences-consecutively">Speak Multiple Sentences Consecutively</h3>
+<p>You can give AIPlayer several sentences at once and make them speak sequentially. In the sample, multi-speaking is performed by selecting random sentences from sentences in the ComboBox. It can be one sentence or it can be several sentences. Press the <strong>Multi Speak</strong> button in the app below to perform the operation.</p>
+<p><br/></p>
+<p><img src="images/Haylyn_MultiSpeak.png" style="zoom:100%;" /></p>
+<pre><code class="language-c#">// using pure-text
+_aiPlayer.Send(new[] {&quot;sentence1&quot;, &quot;sentence2&quot;});
+// using AIClipSet
+_aiPlayer.Send(new[] {clip1, clip2});
+</code></pre>
+<p><br/></p>
+<h4 id="multi-speak-related-monitoring">Multi Speak related Monitoring</h4>
+<p>IAIPlayerCallback.onAIStateChanged(AIState) is called for each sentence. The possible AIState values are shown below. </p>
+<ul>
+<li>SPEAKING_PREPARE_STARTED</li>
+<li>SPEAKING_PREPARE_COMPLETED</li>
+</ul>
+<p>If you send several sentences, it automatically preloads if possible. In this case, you can see that the delay between utterances when the AI speaks is reduced.</p>
+<p><br/></p>
+<h3 id="5-functionalities-other-than-ai-speaking-mainly-related-to-ai-settings">5. Functionalities other than AI Speaking (mainly related to AI settings)</h3>
+<p>After the resource is loaded, some settings of aiPlayer can be changed while the actual operation is on. In the sample project screen below, you can see that <strong>Scale, Margins</strong>, etc. can be adjusted.</p>
+<p><br/></p>
+<h4 id="change-ai-sizescale">Change AI Size(Scale)</h4>
+<p><img src="/img/YSB_Scale.png" style="zoom:100%;" />
+: You can set the size(scale) of AI. The possible value range is from 0.5 to 1.5.</p>
+<pre><code class="language-c#">// set Property
+_aiPlayer.Scale = value;
+</code></pre>
+<p><br/></p>
+<h4 id="change-ai-positionmargin">Change AI Position(Margin)</h4>
+<p><img src="/img/YSB_Margin.png" style="zoom:100%;" />
+: You can change the position(margins) of AI. It can be adjusted based on the X-axis(Horizontal) and the Y-axis(Vertical).</p>
+<pre><code class="language-c#">AIHuman.Common.Margin _aiMargin;
+_aiMargin.X = 64;
+_aiMargin.Y = 8;
+// set Property
+_aiPlayer.Margin = _aiMargin;
+</code></pre>
+<p><br/></p>
+<h3 id="6-error-index">6. Error Index</h3>
+<p>You can receive the error code and its details as a callback(onAIPlayerError) and take appropriate action.</p>
+<p>When an error occurs, the onAIPlayerError(AIError) callback function is called. AIError, the argument of this function, contains information about the error. AIError.errorType tells what kind of error has occurred, and you can find out the details of the error as JSON String through the getMessage() function.</p>
+<p>By using this message, you can take action when a specific error occurs. For example, code 1402 may mean Token expired, and in this case, call AuthStart() to refresh the token.</p>
+<p>Check the full error types <a href="https://ai-platform-prd.s3.ap-northeast-2.amazonaws.com/aihuman/docs/Moneybrain-AIHuman-Error-Code-V1.0.pdf">here</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../SamplePorjectDescription/" class="btn btn-neutral float-left" title="Sample Porject Description"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../MainClassAPIs/" class="btn btn-neutral float-right" title="Main Class APIs">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../SamplePorjectDescription/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../MainClassAPIs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

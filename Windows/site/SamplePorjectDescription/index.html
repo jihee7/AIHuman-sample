@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sample Porject Description - AI Human SDK for Windows</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sample Porject Description";
+        var mkdocs_page_input_path = "SamplePorjectDescription.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI Human SDK for Windows
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Introduction/">Introduction</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ProjectSetup/">Project Set up</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AIHumanQuickStart/">AIHuman Quick Start</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Sample Porject Description</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#menu-on-homeviewhomeviewxaml">Menu on HomeView(HomeView.xaml)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-quick-start-quickstartviewxaml">1. Quick Start (QuickStartView.xaml)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-ai-human-demo-demoviewxaml">2. AI Human Demo (DemoView.xaml)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-with-playchat-azure-stt-playchatviewxaml">3. with Playchat &amp; Azure STT (PlaychatView.xaml)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-ai-chatbot-speech-recognition-together">Using AI + Chatbot + Speech Recognition together</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-transfer-format-of-chatbot-playchat">Data transfer format of Chatbot (Playchat)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-with-google-dialogflow-dialogflowviewxaml">4. with Google Dialogflow (DialogFlowView.xaml)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-ai-google-dialogflow-together">Using AI + Google Dialogflow together</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AIPlayerDescription/">AIPlayer Description</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../MainClassAPIs/">Main Class APIs</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI Human SDK for Windows</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Sample Porject Description</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sample-project-description">Sample Project Description</h1>
+<p>The WPF-based sample covered in this document is an example of using the AI Human SDK. Following this guide, you will be able to try out every functionalities in the AI Human SDK one-by-one through implementing the features in AI Human Sample Application. </p>
+<p>You can open AIHuman_WPF_Sample.sln first and run the following Sample App after build the solution.</p>
+<p><img src="/img/SampleApp_main.png" style="zoom:100%;" /></p>
+<p><strong>The SDK authentication is enabled automatically on this page</strong>. When the screen appears, the authentication action is automatically called, so there is no need to take any other action. All you need to do is input the appId, userkey, uuid, and target platform obtained above. Once authenticated, authentication is maintained until the app is closed, so there is no need to authenticate again. If the menu still doesn't work, check if there is an error in the authentication function(AuthStart) callback. Most of the time, token refresh is the problem.</p>
+<h4 id="menu-on-homeviewhomeviewxaml">Menu on HomeView(HomeView.xaml)</h4>
+<p>Each menu is as follows.</p>
+<ul>
+<li>Quick Start: Quickly see AI Human in action (QuickStartView.xaml)</li>
+<li>AI Human Demo: An example of using AI Human SDK (DemoView.xaml)</li>
+<li>with Playchat &amp; Azure STT: Conversational AI example using AI Human, Playchat, and Azure STT (PlaychatView.xaml)</li>
+<li>with Google Dialogflow: Conversational AI example using AI Human and Google Dialogflow (DialogFlowView.xaml)</li>
+<li>Exit: Exit the App (NavigationBar.xaml)</li>
+</ul>
+<h4 id="1-quick-start-quickstartviewxaml">1. Quick Start (QuickStartView.xaml)</h4>
+<p>In Quick Start, the following screen appears when the default AI creation and pre-preparation step is completed through AIPlayer. It may take several minutes until it starts speaking depending on the network conditions, as there is a default loading time on the first run. After the first utterance, you can press the input box at the bottom of the screen to type in a sentence that you want to make the AI say.  The default AI is Jonathan. (Basically speaking a language that corresponds to the language value set in AI. However, you can implement multilingual services using the following <a href="#change-the-voice-or-language">Change the Voice or Language</a> functionality.)</p>
+<p><img src="/img/Jonathan_demo.png" style="zoom:100%;" /></p>
+<ul>
+<li>Speak or Enter: Jonathan speaks the sentence entered in the TextBox at the bottom right.</li>
+<li>Home: Go to HomeView.xaml</li>
+<li>Exit: Close the app.</li>
+</ul>
+<h4 id="2-ai-human-demo-demoviewxaml">2. AI Human Demo (DemoView.xaml)</h4>
+<p>AI Human Demo is a page where you can try out various functionalities of AIPlayer. You can try changing to another approved AI model through [AI Select]. For other details, please refer to <a href="#aiplayer-description">AIPlayer Description</a>.</p>
+<p><img src="/img/WPF_Sample_DemoPage.png" style="zoom:100%;" /></p>
+<p><strong>First, get a list of available AIs and set up the UI. The Constants.appid, userKey, uuid, and targetPlatform below are parameters entered when calling AuthStart in HomeView.</strong></p>
+<pre><code class="language-c#">AIAPI.Instance.AuthStart(Constants.AppId, Constants.UserKey, Constants.Uuid, Constants.TargetPlatform, (aiList, error) =&gt;
+{
+    // You can get a list of available AIs via CallBack.
+    AIAPI.AIList apiAIlist = JsonConvert.DeserializeObject&lt;AIAPI.AIList&gt;(aiList.Root.ToString());
+    if (aiList == null)
+    {
+        AIStatusText = Resource.ApiAiListEmptyError;
+    }
+
+    AIs = new ObservableCollection&lt;AIAPI.AI&gt;();
+    foreach (AIAPI.AI item in apiAIlist.ai)
+    {
+        AIs.Add(item);
+    }
+    SelectedAI = AIs[0];
+});
+</code></pre>
+<p><strong>The part that changes AI.</strong> In addition to creating and adding AIPlayer, sample text is obtained and the utterance sentence ComboBox is filled. It is updated by getting the rest of the default settings.</p>
+<pre><code class="language-c#">private void UpdateSelectedAI()
+{
+    if (_aiPlayer != null)
+    {
+        _aiPlayer.Dispose();
+        _aiPlayer = null;
+    }
+
+    if (_speechList != null)
+    {
+        _speechList.Clear();
+        _speechList = null;
+    }
+
+    _aiPlayer = new(SelectedAI.AIName, this);
+    AIPlayerObject = _aiPlayer.GetObject();
+
+    SpeechList = new ObservableCollection&lt;string&gt;(AIAPI.Instance.GetSampleTexts(SelectedAI.AIName));
+    SpeechList.Insert(0, Resource.DefaultSpeech);
+
+    SpeechIndex = 0;
+
+    ...
+}
+</code></pre>
+<p><strong>Examples of Speak, Preload, Pause, Multi Speak(Randomly), Resume, and Pause.</strong> </p>
+<p>AIHuman.Core.RelayCommand is used for View and Command Binding. This implementation is only an example and it is not necessary to use AIHuman.Core.RelayCommand.</p>
+<p>Please refer to the <a href="#aiplayer-description">AIPlayer description</a> that follows below.</p>
+<pre><code class="language-c#">private void Speak_Command(object args)
+{
+    _sendingMessage.Clear();
+
+    _sendingMessage.Add(_speechText);
+
+    _aiPlayer.Send(_sendingMessage.ToArray());
+}
+
+private void Preload_Command(object args)
+{
+    _sendingMessage.Clear();
+
+    _sendingMessage.Add(_speechText);
+
+    _isPreload = true;
+    _aiPlayer.Preload(_sendingMessage.ToArray());
+}
+
+private void Stop_Command(object args)
+{
+    _aiPlayer.StopSpeaking();
+    AIStatusText = Resource.StopStatus;
+}
+
+private void Multi_Command(object args)
+{
+    Random rand = new();
+    _sendingMessage.Clear();
+
+    for (int i = 1; i &lt; SpeechList.Count; ++i)
+    {
+        if (rand.Next(0, 100) % 6 % 2 == 0)
+        {
+            _sendingMessage.Add(SpeechList[i]);
+        }
+    }
+
+    _aiPlayer.Send(_sendingMessage.ToArray());
+}
+
+private void Resume_Command(object args)
+{
+    _aiPlayer.Resume();
+    AIStatusText = Resource.ResumeStatus;
+}
+
+private void Pause_Command(object args)
+{
+    _aiPlayer.Pause();
+    AIStatusText = Resource.PauseStatus;
+}
+</code></pre>
+<p><strong>By implementing IAIPlayerCallback, it is possible to receive callback from AI operations.</strong></p>
+<pre><code class="language-c#">public interface IAIPlayerCallback
+{
+    void onAIPlayerError(AIError error);
+    void onAIPlayerResLoadingProgressed(int current, int total);
+    void onAIStateChanged(AIState state);
+}
+</code></pre>
+<p>Through onAIStateChanged implementation, you can receive CallBack of AI states shown below.</p>
+<pre><code class="language-c#">SPEAKING_STARTED: AI started speaking.
+SPEAKING_COMPLETED: AI finished speaking.
+SPEAKING_PREPARE_STARTED: AI started preparation to speak.
+RES_LOAD_COMPLETED: AI Resource loading completed.
+RES_LOAD_STARTED: AI Resource loading started.
+SPEAKING_PREPARE_COMPLETED: AI finished preparation to speak.
+</code></pre>
+<h4 id="3-with-playchat-azure-stt-playchatviewxaml">3. with Playchat &amp; Azure STT (PlaychatView.xaml)</h4>
+<p>This demo is an example of a conversational AI service linked with AI Human + Playchat + Azure STT. Basically, AI Human and Playchat are in the form of chatting by the user inputting with the keyboard. Additionally, use Azure STT to <strong>speak like a real person</strong>. When the AI load is complete, the AI greets you. ("Hello, long time no see.") </p>
+<p>After the greeting, chat or click the STT button at the bottom to get a voice input signal, say "<strong>where are you</strong>". (Actual operation is possible after the Azure STT setup is completed. It is explained below in this chapter.) The AI understands the voice and the AI gives an appropriate answer. Currently, as it is a test chatbot, it can answer only a few limited questions, but if the chatbot is advanced, it can be used in various ways, such as ordering at a restaurant or making a reservation for a performance depending on the situation. In addition, the chatbot can also display images by sending <strong>additional information</strong> in addition to text.</p>
+<p><img src="images\PlaychatWithAzureSTTDemo.png" style="zoom:100%;" /></p>
+<h4 id="using-ai-chatbot-speech-recognition-together">Using AI + Chatbot + Speech Recognition together</h4>
+<p>If you want to use the conversational AI service mentioned in the demo, you need to prepare as follows.</p>
+<ul>
+<li>Prepare your Playchat Bot ID: Already prepared in the sample (https://www.playchat.ai/docs/en/menual-chatbot-en.html)</li>
+<li>Prepare Azure Speech Service Key and Endpoint: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview</li>
+</ul>
+<p>Assign values to the PLAYCHAT_BOT_ID, AZURE_STT_URL, and AZURE_SUBSCRIPTION_KEY variables declared at the top of the class definition of the PlaychatViewModel.cs file.</p>
+<p>The main thing is to continue the conversation with AI and voice. For this, AIPlayer, chatbot, and voice recognition must work harmoniously. The class that implements this is <strong>PlaychatViewModel</strong>.</p>
+<p>First, after the chatbot is loaded, it sends a <strong>"start"(Constants.KEY_START)</strong> signal to the chatbot, and when the chatbot recognizes it, it sends a <strong>greeting message</strong>. The greeting is delivered via IChatbotCallback's OnChatbotMessage function. PlaychatViewModel extracts the sentences to be delivered to AI from this message and delivers them to AIPlayer, allowing AI to speak.</p>
+<pre><code class="language-c#">public void OnChattingReady()
+{
+    SendMsgToChatbotAndUpdateChatUI(Constants.KEY_START, null);
+}
+
+public void OnChatbotMessage(JObject response)
+{
+    OnNewChatMessage(response);
+
+    if (response != null)
+    {
+        // get func_name, args
+        string fName = response.GetValue(Constants.KEY_FUNC_NAME).ToString();
+        JObject args = response.GetValue(Constants.KEY_ARGS).ToObject&lt;JObject&gt;();
+
+        // process for functions accordingly
+        ProcessOnNewFunc(fName, args);
+    }
+}
+</code></pre>
+<h4 id="data-transfer-format-of-chatbot-playchat">Data transfer format of Chatbot (Playchat)</h4>
+<p>When speech is recognized through Azure STT, the content is delivered directly to the Playchat server. However, there are situations where you need to manually send a message or special signal to the chatbot. (This includes the "start" signal mentioned above.) To send the user's message, use the chatbot's Send function.</p>
+<pre><code class="language-c#">bool Send(string command, JObject detail)
+</code></pre>
+<p>Write the server function name you want in the command, and put the necessary arguments as key:value in detail. The currently set command (or func_name, the same) is as follows.</p>
+<pre><code class="language-C#">namespace AIHuman.Common.Constants
+{
+// send
+public const string VALUE_USERINPUT_FUNCNAME = &quot;userInput&quot;;
+public const string KEY_START = &quot;start&quot;;
+
+// recv
+public const string VALUE_FUNCNAME_ONMESSAGE = &quot;onMessage&quot;;
+
+// extra
+public const string VALUE_USERINPUT_NEXT = &quot;:next&quot;;
+}
+</code></pre>
+<ul>
+<li>
+<p>In the userInput function, input the argument value with text as the key.</p>
+</li>
+<li>
+<p>start function takes no arguments.</p>
+</li>
+<li>
+<p>OnMessage basically comes with the following values. In particular, if the next value is true for 'extra' here, it means that there are additional messages. </p>
+</li>
+</ul>
+<p><code>C#
+  /* example
+  {"func_name":"onMessage",
+    "args":
+    {"kind":"Content",
+    "text":"Hello,  long time no see.",
+    "languages":{"en":"Hello,  long time no see."},
+    "image":{"url":"http://...,"displayname":"office image.jpg"}
+    "extra":{next:true}}}
+  */</code></p>
+<ul>
+<li>If there is an additional message, you can receive the additional message by sending it by adding <strong>":next" (VALUE_USERINPUT_NEXT)</strong>, which is a special argument indication, as the argument text in userInput.</li>
+</ul>
+<p><code>C#
+  private void RequestNextMessageIfNeeded(JObject args)
+  {
+      if (args != null)
+      {
+          JObject extra = (JObject)args.GetValue(Constants.KEY_EXTRA);
+          if (extra != null)
+          {
+              bool next = (bool)extra.GetValue(Constants.KEY_NEXT);
+              if (next)
+              {
+                  SendUserInputToChatbot(Constants.VALUE_USERINPUT_NEXT);
+              }
+          }
+      }
+  }</code></p>
+<p>Many of the above explanations have been omitted. Open the solution file of the sample and refer to the Playchat.xaml and PlaychatViewModel.cs files.</p>
+<h4 id="4-with-google-dialogflow-dialogflowviewxaml">4. with Google Dialogflow (DialogFlowView.xaml)</h4>
+<p>This demo is a conversational AI service using AI Human and Google Dialogflow, and it is another example that shows that AI Human can be used together with other services such as Chatbot. (Actual operation is possible after Google Dialogflow is set up. It is explained below in this chapter.)</p>
+<p><img src="/img/GoogleDialogflowDemo.png" style="zoom:100%;" /></p>
+<h4 id="using-ai-google-dialogflow-together">Using AI + Google Dialogflow together</h4>
+<p>If you want to use the conversational AI service mentioned in the demo, you need to prepare as follows.</p>
+<ul>
+<li>Preparing the Dialogflow Credential File: https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.V2/latest</li>
+<li>https://cloud.google.com/docs/authentication/getting-started</li>
+<li>As mentioned in the above official site, the path of the Credential Json file must be registered in the environment variable.</li>
+</ul>
+<p>Assign the Credential Json file &gt; project_id value to the DF_PROJECT_ID variable declared at the top of the class definition of the DialogFlowViewModel.cs file.</p>
+<p>You can create a Chatbot client using Google.Cloud.Dialogflow.V2.SessionsClient.Create(). Create a session through SessionName.FromProjectSession(DF_PROJECT_ID, DF_SESSION_ID) and use it when calling client.DetectIntent or client.DetectIntentAsync.</p>
+<p>For details, open the solution file of the sample and refer to the DialogFlowView.xaml and DialogFlowViewModel.cs files.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../AIHumanQuickStart/" class="btn btn-neutral float-left" title="AIHuman Quick Start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../AIPlayerDescription/" class="btn btn-neutral float-right" title="AIPlayer Description">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../AIHumanQuickStart/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../AIPlayerDescription/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

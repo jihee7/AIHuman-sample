@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Project Set up - AI Human SDK for Windows</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Project Set up";
+        var mkdocs_page_input_path = "ProjectSetup.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI Human SDK for Windows
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Introduction/">Introduction</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Project Set up</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-create-a-new-project-in-visual-studio2019">1. Create a New Project in Visual Studio(2019).</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-new-project-wpf-application-target-framework-net-50">: Create New Project &gt; WPF Application &gt; Target Framework &gt; .NET 5.0</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wpfapp1-is-the-default-when-creating-a-project">WpfApp1 is the default when creating a project.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-project-setup">2. Project Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-add-layout-componentparent-layout-to-which-aiplayer-will-be-added-to-mainwindowxaml">3. Add Layout Component(parent layout) to which AIPlayer will be added to MainWindow.xaml.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-write-the-code-below-in-appxamlcs-mainwindowviewmodelcs-and-mainwindow">4. Write the code below in App.xaml.cs, MainWindowViewModel.cs, and MainWindow.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-command-the-ai-to-speak">5. Command the AI to speak</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AIHumanQuickStart/">AIHuman Quick Start</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SamplePorjectDescription/">Sample Porject Description</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AIPlayerDescription/">AIPlayer Description</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../MainClassAPIs/">Main Class APIs</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI Human SDK for Windows</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Project Set up</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="project-set-up">Project Set up</h1>
+<h3 id="1-create-a-new-project-in-visual-studio2019">1. Create a New Project in Visual Studio(2019).</h3>
+<h4 id="create-new-project-wpf-application-target-framework-net-50">: Create New Project &gt; WPF Application &gt; Target Framework &gt; .NET 5.0</h4>
+<h4 id="wpfapp1-is-the-default-when-creating-a-project">WpfApp1 is the default when creating a project.</h4>
+<p><br/></p>
+<h3 id="2-project-setup">2. Project Setup</h3>
+<p>Perform the initial setup of the project.</p>
+<p>2-1. Download the SDK for Windows from the AI Human SDK website.</p>
+<p>2-2. Move the downloaded SDK and related files to the previously created project path.</p>
+<p>2-3. In Solution Explorer, right-click Project &gt; Right-click &gt; Add &gt; Create a new folder with a name.</p>
+<p>​    You can configure the libraries referenced in the solution through the created folder &gt; right-click &gt; Add &gt; Existing item.</p>
+<p><img src="/img/NewProject_Add_Sdk.png" style="zoom:100%;"/></p>
+<p>2-4. Add the downloaded AIHuman SDK library to the solution item.</p>
+<p>In Solution Explorer, right-click on "project" at the top &gt; Add &gt; Project Reference &gt; Reference Manager &gt; Browse &gt; Add AIHumanSDK.dll and Newtonsoft.Json.dll. You will then be able to see that AIHuman SDK is registered in Dependencies &gt; Assembly in the project tree.</p>
+<p><img src="/img/NewProject_Add_Ref.png" style="zoom:100%;"/></p>
+<p><img src="/img/NewProject_Init.png" style="zoom:100%;"/></p>
+<p><br/></p>
+<h3 id="3-add-layout-componentparent-layout-to-which-aiplayer-will-be-added-to-mainwindowxaml">3. Add Layout Component(parent layout) to which AIPlayer will be added to MainWindow.xaml.</h3>
+<p><img src="/img/NewProject_Add_Layout.png" style="zoom:100%;" /></p>
+<p><img src="/img/NewProject_Add_AIPlayer.png" style="zoom:100%;"/></p>
+<p><br/></p>
+<h3 id="4-write-the-code-below-in-appxamlcs-mainwindowviewmodelcs-and-mainwindow">4. Write the code below in App.xaml.cs, MainWindowViewModel.cs, and MainWindow.</h3>
+<ul>
+<li>App.xaml.cs</li>
+</ul>
+<p>First, you need to authenticate. The userKey can be issued by registering the appId on the AI Human website. (Refer to step 1 of <a href="#aihuman-quick-start">Quick Start</a>)</p>
+<pre><code class="language-c#">using AIHuman.Core;
+using Newtonsoft.Json;
+using System.Windows;
+
+namespace WpfApp1
+{
+    /// &lt;summary&gt;
+    /// Interaction logic for App.xaml
+    /// &lt;/summary&gt;
+    public partial class App : Application
+    {
+        public App()
+        {
+            AIAPI.Instance.AuthStart(&quot;your appId&quot;, &quot;your userKey&quot;, &quot;your uuid&quot;, &quot;wnds&quot;,
+                (aiLIst, error) =&gt;
+                {
+                    if (string.IsNullOrEmpty(error) &amp;&amp; aiLIst != null)
+                    {
+                        string jsonStr = aiLIst.Root.ToString();
+                        AIAPI.AIList list = JsonConvert.DeserializeObject&lt;AIAPI.AIList&gt;(jsonStr);
+                        // $&quot;Auth Complete, Avaliable Count: {list.ai.Length}&quot;;
+                    }
+                    else
+                    {
+                        MessageBox.Show($&quot;AuthStart: {error}&quot;);
+                    }
+                }
+            );
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>MainWindowViewModel.cs</li>
+</ul>
+<pre><code class="language-c#">using AIHuman.Common;
+using AIHuman.Common.Base;
+using AIHuman.Core;
+using AIHuman.Interface;
+using AIHuman.Media;
+using System;
+using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Threading;
+
+namespace WpfApp1
+{
+    public class MainWindowViewModel : ViewModelBase, IAIPlayerCallback
+    {
+        private AIPlayer _aiPlayer;
+        public AIPlayerView AIPlayerObject
+        {
+            get =&gt; _aiPlayer.GetObject();
+            private set =&gt; OnPropertyChanged(nameof(AIPlayerObject));
+        }
+
+        private string _status;
+        public string AIStatusText
+        {
+            get =&gt; _status;
+            set
+            {
+                _status = value;
+                OnPropertyChanged(nameof(AIStatusText));
+            }
+        }
+
+        private string _inputText;
+        public string InputText
+        {
+            get =&gt; _inputText;
+            set
+            {
+                _inputText = value;
+                OnPropertyChanged(nameof(InputText));
+            }
+        }
+
+        private ObservableCollection&lt;string&gt; _speechList;
+        public ObservableCollection&lt;string&gt; SpeechList
+        {
+            get =&gt; _speechList;
+            private set
+            {
+                _speechList = value;
+                OnPropertyChanged(nameof(SpeechList));
+            }
+        }
+
+        public RelayCommand SpeakCommand { get; private set; }
+
+        public MainWindowViewModel()
+        {
+            SpeechList = new ObservableCollection&lt;string&gt;();
+
+            _aiPlayer = new AIPlayer(this);
+            AIPlayerObject = _aiPlayer.GetObject();
+
+            SpeakCommand = new RelayCommand(Speak_Command);
+        }
+
+        public void onAIPlayerError(AIError error)
+        {
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Render, new Action(() =&gt;
+            {
+                SpeechList.Add(error.getMessage());
+                AIStatusText = nameof(AIError);
+            }));
+        }
+
+        public void onAIPlayerResLoadingProgressed(int current, int total)
+        {
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Render, new Action(() =&gt;
+            {
+                float progress = ((float)current / (float)total) * 100;
+                AIStatusText = string.Format(&quot;AI Resource Loading... {0}%&quot;, (int)progress);
+            }));
+        }
+
+        public void onAIStateChanged(AIState state)
+        {
+            switch (state.state)
+            {
+                case AIState.RES_LOAD_COMPLETED:
+                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Render, new Action(() =&gt;
+                    {
+                        AIStatusText = &quot;AI Resource loading completed.&quot;;
+                    }));
+                    break;
+            }
+        }
+
+        private void Speak_Command(object args)
+        {
+            if (string.IsNullOrEmpty(InputText) == false)
+            {
+                _aiPlayer.Send(new[] { InputText });
+                SpeechList.Add(InputText);
+                InputText = string.Empty;
+            }
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>MainWindow.xaml</li>
+</ul>
+<pre><code class="language-c#">&lt;Window x:Class=&quot;WpfApp1.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:local=&quot;clr-namespace:WpfApp1&quot;
+        d:DataContext=&quot;{d:DesignInstance Type=local:MainWindowViewModel}&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;MainWindow&quot; Height=&quot;450&quot; Width=&quot;800&quot;&gt;
+    &lt;Grid&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition/&gt;
+            &lt;ColumnDefinition/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+
+        &lt;ContentControl Margin=&quot;0&quot; Grid.Column=&quot;0&quot; Content=&quot;{Binding Path=AIPlayerObject}&quot; Focusable=&quot;False&quot; /&gt;
+
+        &lt;Grid Margin=&quot;0&quot; Grid.Column=&quot;1&quot;&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;1*&quot;/&gt;
+                &lt;RowDefinition Height=&quot;10*&quot;/&gt;
+                &lt;RowDefinition/&gt;
+            &lt;/Grid.RowDefinitions&gt;
+
+            &lt;Grid Grid.Row=&quot;0&quot;&gt;
+                &lt;Grid.Background&gt;
+                    &lt;SolidColorBrush Color=&quot;#00D3D3&quot;/&gt;
+                &lt;/Grid.Background&gt;
+                &lt;Viewbox&gt;
+                    &lt;TextBlock FontWeight=&quot;Bold&quot;&gt;
+                        &lt;Label Content=&quot;{Binding AIStatusText}&quot; /&gt;
+                    &lt;/TextBlock&gt;
+                &lt;/Viewbox&gt;
+            &lt;/Grid&gt;
+            &lt;Grid Grid.Row=&quot;1&quot;&gt;
+                &lt;DockPanel&gt;
+                    &lt;ScrollViewer VerticalScrollBarVisibility=&quot;Auto&quot; HorizontalScrollBarVisibility=&quot;Auto&quot;&gt;
+                        &lt;ItemsControl BorderThickness=&quot;0&quot; ItemsSource=&quot;{Binding SpeechList}&quot; Focusable=&quot;False&quot; /&gt;
+                    &lt;/ScrollViewer&gt;
+                &lt;/DockPanel&gt;
+            &lt;/Grid&gt;
+            &lt;Grid Grid.Row=&quot;2&quot;&gt;
+                &lt;Grid.ColumnDefinitions&gt;
+                    &lt;ColumnDefinition Width=&quot;7*&quot;/&gt;
+                    &lt;ColumnDefinition/&gt;
+                &lt;/Grid.ColumnDefinitions&gt;
+                &lt;TextBox Grid.Column=&quot;0&quot; MaxLines=&quot;1&quot; FontStretch=&quot;UltraExpanded&quot; Text=&quot;{Binding InputText}&quot;&gt;
+                &lt;/TextBox&gt;
+                &lt;Button Grid.Column=&quot;1&quot; HorizontalAlignment=&quot;Stretch&quot; Command=&quot;{Binding SpeakCommand}&quot;&gt;
+                    &lt;TextBlock Padding=&quot;10, 5&quot; Text=&quot;Send&quot; /&gt;
+                &lt;/Button&gt;
+            &lt;/Grid&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<ul>
+<li>MainWindow.xaml.cs</li>
+</ul>
+<pre><code class="language-c#">using System.Windows;
+
+namespace WpfApp1
+{
+    /// &lt;summary&gt;
+    /// Interaction logic for MainWindow.xaml
+    /// &lt;/summary&gt;
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            DataContext = new MainWindowViewModel();
+        }
+    }
+}
+</code></pre>
+<h3 id="5-command-the-ai-to-speak">5. Command the AI to speak</h3>
+<ul>
+<li>Build Solution &gt; Run &gt; (Loading Resources) &gt; Enter a sentence in the text box at the bottom right &gt; Click the Send button</li>
+</ul>
+<p><img src="/img/Tutorial_danny_demo.png" style="zoom:100%;" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Introduction/" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../AIHumanQuickStart/" class="btn btn-neutral float-right" title="AIHuman Quick Start">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Introduction/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../AIHumanQuickStart/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

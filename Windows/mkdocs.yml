@@ -1,0 +1,9 @@
+site_name: AI Human SDK for Windows
+nav:
+  - Introduction: Introduction.md
+  - Project Set up: ProjectSetup.md
+  - AIHuman Quick Start: AIHumanQuickStart.md
+  - Sample Porject Description: SamplePorjectDescription.md
+  - AIPlayer Description: AIPlayerDescription.md
+  - Main Class APIs: MainClassAPIs.md
+theme: readthedocs
