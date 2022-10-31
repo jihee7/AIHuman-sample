@@ -19,23 +19,23 @@ Perform the initial setup of the project.
 
 ​    You can configure the libraries referenced in the solution through the created folder > right-click > Add > Existing item.
 
-<img src="/img/NewProject_Add_Sdk.png" style="zoom:100%;"/>
+<img src="../img/NewProject_Add_Sdk.png" style="zoom:100%;"/>
 
    2-4. Add the downloaded AIHuman SDK library to the solution item.
 
  In Solution Explorer, right-click on "project" at the top > Add > Project Reference > Reference Manager > Browse > Add AIHumanSDK.dll and Newtonsoft.Json.dll. You will then be able to see that AIHuman SDK is registered in Dependencies > Assembly in the project tree.
 
-<img src="/img/NewProject_Add_Ref.png" style="zoom:100%;"/>
+<img src="../img/NewProject_Add_Ref.png" style="zoom:100%;"/>
 
-<img src="/img/NewProject_Init.png" style="zoom:100%;"/>
+<img src="../img/NewProject_Init.png" style="zoom:100%;"/>
 
 <br/>
 
 ### 3. Add Layout Component(parent layout) to which AIPlayer will be added to MainWindow.xaml.
 
-<img src="/img/NewProject_Add_Layout.png" style="zoom:100%;" />
+<img src="../img/NewProject_Add_Layout.png" style="zoom:100%;" />
 
-<img src="/img/NewProject_Add_AIPlayer.png" style="zoom:100%;"/>
+<img src="../img/NewProject_Add_AIPlayer.png" style="zoom:100%;"/>
 
 <br/>
 
@@ -280,4 +280,4 @@ namespace WpfApp1
 
 - Build Solution > Run > (Loading Resources) > Enter a sentence in the text box at the bottom right > Click the Send button
 
-  <img src="/img/Tutorial_danny_demo.png" style="zoom:100%;" />
+  <img src="../img/Tutorial_danny_demo.png" style="zoom:100%;" />

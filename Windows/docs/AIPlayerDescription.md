@@ -229,7 +229,7 @@ In general, speech can be performed using pure text, but speech can also be perf
 
 If the text to speak is too long, it may not be possible to synthesize the resources required for the utterance. There are some models that can synthesize long sentences. Although it varies from ai to ai, it is generally recommended that sentences be cut to an appropriate length in Korean, usually within 30 to 40 characters, and at a similar level in English.
 
-<img src="/img/Speak_Haylyn.png" style="zoom:100%;" />
+<img src="../img/Speak_Haylyn.png" style="zoom:100%;" />
 
 ```c#
 // using pure-text
@@ -337,7 +337,7 @@ _aiPlayer.Speed = value;
 <br/>
 
 ### Gestures
-As briefly mentioned above, speech can also be performed using [ClipSet](#main-class-apis). The ClipSet here refers to one action unit in a series of AI actions. There are three types of ClipSet: general speech that performs only speaking, speech with gesture, and gesture only. The Gesture can be used depending on whether the AI model supports [Gestures](#main-class-apis), and the list of available gestures can be checked using the [GetGestures](#main-class-apis) function of AIPlayer. Even a model that does not support gestures can be operated using ClipSet.
+As briefly mentioned above, speech can also be performed using [ClipSet](#../MainClassAPIs/#aihumanmediaaiplayer). The ClipSet here refers to one action unit in a series of AI actions. There are three types of ClipSet: general speech that performs only speaking, speech with gesture, and gesture only. The Gesture can be used depending on whether the AI model supports [Gestures](#../MainClassAPIs/#aihumancommonmodelaigesture), and the list of available gestures can be checked using the [GetGestures](#main-class-apis) function of AIPlayer. Even a model that does not support gestures can be operated using ClipSet.
 
 Clipset types are as follows.
 
@@ -348,7 +348,7 @@ Clipset types are as follows.
 
 In the sample screenshot below, an AI model named Jonathan is speaking while waving his hand with a "hi" gesture.
 
-<img src="/img/Jonathan_Gesture_Demo.png" style="zoom:100%;" />
+<img src="../img/Jonathan_Gesture_Demo.png" style="zoom:100%;" />
 
 ```c#
 using AIHuman.Common.Model;
@@ -380,7 +380,7 @@ IAIPlayerCallback.OnAIStateChanged(AIState) is called in the same way as the spe
 ### Change the Voice or Language
 Some AIs can speak with other voices besides basic voices. It is also possible to speak other language than the basic voice's language if the supported voice's language is different from the basic language of AI. You can check the sample for a list of voices that are currently available to a AI.
 
-<img src="/img/CustomVoice_GCE.png" style="zoom:100%;" />
+<img src="../img/CustomVoice_GCE.png" style="zoom:100%;" />
 
 #### Set the custom voice using AIPlayer's method
 You can check which voice AI can use by the following method. CustomVoice has properties of id, name, language, and tag.
@@ -419,7 +419,7 @@ Preload is used when you want to make the AI speak the next sentence without del
 
 <br/>
 
-<img src="/img/Haylyn_Preload.png" style="zoom:100%;" />
+<img src="../img/Haylyn_Preload.png" style="zoom:100%;" />
 
 <br/>
 
@@ -468,7 +468,7 @@ You can give AIPlayer several sentences at once and make them speak sequentially
 
 <br/>
 
-<img src="images/Haylyn_MultiSpeak.png" style="zoom:100%;" />
+<img src="../img/Haylyn_MultiSpeak.png" style="zoom:100%;" />
 
 ```c#
 // using pure-text
@@ -497,7 +497,7 @@ After the resource is loaded, some settings of aiPlayer can be changed while the
 <br/>
 
 #### Change AI Size(Scale)
-<img src="/img/YSB_Scale.png" style="zoom:100%;" />
+<img src="../img/YSB_Scale.png" style="zoom:100%;" />
 : You can set the size(scale) of AI. The possible value range is from 0.5 to 1.5.
 
 ```c#
@@ -508,7 +508,7 @@ _aiPlayer.Scale = value;
 <br/>
 
 #### Change AI Position(Margin)
-<img src="/img/YSB_Margin.png" style="zoom:100%;" />
+<img src="../img/YSB_Margin.png" style="zoom:100%;" />
 : You can change the position(margins) of AI. It can be adjusted based on the X-axis(Horizontal) and the Y-axis(Vertical).
 
 ```c#

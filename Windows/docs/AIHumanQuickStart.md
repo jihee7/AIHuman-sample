@@ -1,6 +1,6 @@
 # AIHuman Quick Start
 
-<img src="/img/QuickStart_Main.png" style="zoom:100%;" />
+<img src="../img/QuickStart_Main.png" style="zoom:100%;" />
 
 In this chapter, we will quickly set up AIPlayer with the default AI and learn about AI speaking process. When setting up AIPlayer for the first time, it may take several minutes to load depending on the network condition.
 
@@ -8,7 +8,7 @@ In this chapter, we will quickly set up AIPlayer with the default AI and learn a
 
 **Create a project in [SDK Website](https://aitalk.deepbrainai.io), enter App Id of Windows and click confirm. Then User Key will be issued.**
 
-<img src="/img/SDK_WebPage_UserKey.png" style="zoom:100%;" />
+<img src="../img/SDK_WebPage_UserKey.png" style="zoom:100%;" />
 
 Implement the AuthStart function: input appId, userKey, uuid, and platform information.
 

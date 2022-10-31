@@ -4,7 +4,7 @@ The WPF-based sample covered in this document is an example of using the AI Huma
 
 You can open AIHuman_WPF_Sample.sln first and run the following Sample App after build the solution.
 
-<img src="/img/SampleApp_main.png" style="zoom:100%;" />
+<img src="../img/SampleApp_main.png" style="zoom:100%;" />
 
 **The SDK authentication is enabled automatically on this page**. When the screen appears, the authentication action is automatically called, so there is no need to take any other action. All you need to do is input the appId, userkey, uuid, and target platform obtained above. Once authenticated, authentication is maintained until the app is closed, so there is no need to authenticate again. If the menu still doesn't work, check if there is an error in the authentication function(AuthStart) callback. Most of the time, token refresh is the problem.
 
@@ -22,7 +22,7 @@ Each menu is as follows.
 
 In Quick Start, the following screen appears when the default AI creation and pre-preparation step is completed through AIPlayer. It may take several minutes until it starts speaking depending on the network conditions, as there is a default loading time on the first run. After the first utterance, you can press the input box at the bottom of the screen to type in a sentence that you want to make the AI say.  The default AI is Jonathan. (Basically speaking a language that corresponds to the language value set in AI. However, you can implement multilingual services using the following [Change the Voice or Language](#change-the-voice-or-language) functionality.)
 
-<img src="/img/Jonathan_demo.png" style="zoom:100%;" />
+<img src="../img/Jonathan_demo.png" style="zoom:100%;" />
 
 - Speak or Enter: Jonathan speaks the sentence entered in the TextBox at the bottom right.
 - Home: Go to HomeView.xaml
@@ -32,7 +32,7 @@ In Quick Start, the following screen appears when the default AI creation and pr
 
 AI Human Demo is a page where you can try out various functionalities of AIPlayer. You can try changing to another approved AI model through [AI Select]. For other details, please refer to [AIPlayer Description](#aiplayer-description).
 
-<img src="/img/WPF_Sample_DemoPage.png" style="zoom:100%;" />
+<img src="../img/WPF_Sample_DemoPage.png" style="zoom:100%;" />
 
 **First, get a list of available AIs and set up the UI. The Constants.appid, userKey, uuid, and targetPlatform below are parameters entered when calling AuthStart in HomeView.**
 
@@ -173,7 +173,7 @@ This demo is an example of a conversational AI service linked with AI Human + Pl
 
 After the greeting, chat or click the STT button at the bottom to get a voice input signal, say "**where are you**". (Actual operation is possible after the Azure STT setup is completed. It is explained below in this chapter.) The AI understands the voice and the AI gives an appropriate answer. Currently, as it is a test chatbot, it can answer only a few limited questions, but if the chatbot is advanced, it can be used in various ways, such as ordering at a restaurant or making a reservation for a performance depending on the situation. In addition, the chatbot can also display images by sending **additional information** in addition to text.
 
-<img src="images\PlaychatWithAzureSTTDemo.png" style="zoom:100%;" />
+<img src="../img/PlaychatWithAzureSTTDemo.png" style="zoom:100%;" />
 
 #### Using AI + Chatbot + Speech Recognition together
 
@@ -279,7 +279,7 @@ Many of the above explanations have been omitted. Open the solution file of the 
 
 This demo is a conversational AI service using AI Human and Google Dialogflow, and it is another example that shows that AI Human can be used together with other services such as Chatbot. (Actual operation is possible after Google Dialogflow is set up. It is explained below in this chapter.)
 
-<img src="/img/GoogleDialogflowDemo.png" style="zoom:100%;" />
+<img src="../img/GoogleDialogflowDemo.png" style="zoom:100%;" />
 
 #### Using AI + Google Dialogflow together
 
